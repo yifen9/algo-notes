@@ -1,0 +1,2066 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yifen9.github.io/algo-notes/atcoder/1_abc_AtCoder_Beginner_Contest/370/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+    
+    
+      
+        <title>ABC > 370 - Algorithm Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../overrides/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#abc-370" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Algorithm Notes" class="md-header__button md-logo" aria-label="Algorithm Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Algorithm Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ABC &gt; 370
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yifen9/algo-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    algo-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../template/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Template
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AtCoder
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../aoj/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AOJ
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Algorithm Notes" class="md-nav__button md-logo" aria-label="Algorithm Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Algorithm Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yifen9/algo-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    algo-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Template
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Template
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../template/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Beginner Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Beginner Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../2_arc_AtCoder_Regular_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Regular Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Regular Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../3_agc_AtCoder_Grand_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Grand Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Grand Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../4_ahc_AtCoder_Heuristic_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Heuristic Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Heuristic Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../aoj/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AOJ
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            AOJ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../aoj/courses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Courses
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Courses
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../aoj/courses/2_ITP1_Introduction_to_Programming_I/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    2 Introduction to Programming I
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2 Introduction to Programming I
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tasks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contest-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contest Statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contest Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      コンテスト情報
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="コンテスト情報">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      **デジタル変革推進室 アルゴリズムグループ 主査 高橋直大
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      **デジタル変革推進室 アルゴリズムグループ 主任 水口元尊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pf-ivi" class="md-nav__link">
+    <span class="md-ellipsis">
+      ソフトウェアPF開発部 IVIソフトウェア開発室 指導職 富田京志
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      **サービス技術部 主任 長内翔太
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ota" class="md-nav__link">
+    <span class="md-ellipsis">
+      **デジタルソフト開発センター OTA推進室 岡井成遊
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ms" class="md-nav__link">
+    <span class="md-ellipsis">
+      **MS制御開発部 環境制御開発室役職 指導職 高橋聡史
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      直近転職された人の紹介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      **デジタル変革推進室アルゴリズムグループ 大野公平 （ヒューリスティック :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      **デジタル変革推進室アルゴリズムグループ 田中翔一
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      採用情報
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="採用情報">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      デジタル変革推進室 アルゴリズムグループ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      その他の部署
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      配点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      賞品
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="賞品">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      賞品に関する注意事項
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      注意事項
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      ルール
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      便利情報
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contest-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contest Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contest-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contest Rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful Links
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="abc-370">ABC &gt; 370<a class="headerlink" href="#abc-370" title="Permanent link">&para;</a></h1>
+<p><small><a href="../">← Back</a></small></p>
+<h2 id="basic-info">Basic Info<a class="headerlink" href="#basic-info" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>ID:    </strong>370</li>
+<li><strong>Class: </strong>AtCoder Beginner Contest</li>
+<li><strong><a href="https://atcoder.jp/contests/abc370">Origin</a></strong></li>
+<li><strong><a href="https://download-directory.github.io/?url=https://github.com/yifen9/algo-notes/tree/main/src/atcoder/1_abc_AtCoder_Beginner_Contest/370" download>Download</a></strong></li>
+</ul>
+<h2 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Label</th>
+<th>ID</th>
+<th>Item</th>
+<th>Size</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="a_A_Raise_Both_Hands/">Raise Both Hands</a></td>
+<td>A</td>
+<td>a</td>
+<td>2 items</td>
+<td>4 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc370/tasks/abc370_a">abc370_a</a></td>
+</tr>
+<tr>
+<td><a href="b_B_Binary_Alchemy/">Binary Alchemy</a></td>
+<td>B</td>
+<td>b</td>
+<td>2 items</td>
+<td>4 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc370/tasks/abc370_b">abc370_b</a></td>
+</tr>
+<tr>
+<td><a href="c_C_Word_Ladder/">Word Ladder</a></td>
+<td>C</td>
+<td>c</td>
+<td>2 items</td>
+<td>6 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc370/tasks/abc370_c">abc370_c</a></td>
+</tr>
+<tr>
+<td><a href="d_D_Cross_Explosion/">Cross Explosion</a></td>
+<td>D</td>
+<td>d</td>
+<td>2 items</td>
+<td>7 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc370/tasks/abc370_d">abc370_d</a></td>
+</tr>
+<tr>
+<td><a href="e_E_Avoid_K_Partition/">Avoid K Partition</a></td>
+<td>E</td>
+<td>e</td>
+<td>2 items</td>
+<td>5 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc370/tasks/abc370_e">abc370_e</a></td>
+</tr>
+<tr>
+<td><a href="f_F_Cake_Division/">Cake Division</a></td>
+<td>F</td>
+<td>f</td>
+<td>2 items</td>
+<td>6 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc370/tasks/abc370_f">abc370_f</a></td>
+</tr>
+<tr>
+<td><a href="g_G_Divisible_by_3/">Divisible by 3</a></td>
+<td>G</td>
+<td>g</td>
+<td>2 items</td>
+<td>4 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc370/tasks/abc370_g">abc370_g</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="contest-statement">Contest Statement<a class="headerlink" href="#contest-statement" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">日本語</label><label for="__tabbed_1_2">English</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div>
+<p><script>
+$(function () {
+      $(".js-accordion-title").on("click", function() {
+      $(this).next().slideToggle(500);
+      $(this).toggleClass("open",500);
+      });
+  });</p>
+</script>
+<p><span></p>
+<p><span></p>
+<h3 id="_1"><strong>コンテスト情報</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<section>
+<ul>
+<p><li>
+コンテスト時間: 100 分
+</li></p>
+<p><li>
+レーティング更新対象: 0 - 
+<span>
+1999
+</span></p>
+</li>
+</ul>
+</section>
+<hr />
+<div>
+<dl>
+<p><dt>
+トヨタ自動車とAtCoder
+</dt></p>
+<dd>
+<section>
+<p><p>
+AtCoderは、トヨタ自動車株式会社のデジタル変革推進を支援するため、トヨタに新設された組織に、AtCoder代表の高橋(<a href="https://atcoder.jp/contests/abc370/users/chokudai">
+<span>
+chokudai
+</span>
+</a>)が参画し、アルゴリズム開発を通じた課題解決と、アルゴリズムエンジニアの育成を支援しています。</p>
+</p>
+<p><p>
+支援の内容は以下の通りです。</p>
+</p>
+<ul>
+<p><li>
+新組織「デジタル変革推進室 アルゴリズムグループ」に、高橋(<a href="https://atcoder.jp/contests/abc370/users/chokudai">
+<span>
+chokudai
+</span>
+</a>)が参画
+</li></p>
+<p><li>
+アルゴリズム開発を通じたトヨタの業務課題の解決
+</li></p>
+<p><li>
+アルゴリズムエンジニアを中心としたアップスキリングプログラムの提供
+</li></p>
+<p><li>
+コンテスト協賛等を通じたアルゴリズムエンジニアの採用活動
+</li></p>
+</ul>
+<p><p>
+過去に掲載されたAtCoderの高橋とデジタル変革推進室の取り組みなどは以下の情報をご参考になさってください。</p>
+</p>
+<ul>
+<p><li>
+<a href="https://japan.cnet.com/article/35201522/">https://japan.cnet.com/article/35201522/</a>
+</li></p>
+<p><li>
+<a href="https://dentsu-ho.com/articles/8533">https://dentsu-ho.com/articles/8533</a>
+</li></p>
+<p><li>
+<a href="https://dentsu-ho.com/articles/8536">https://dentsu-ho.com/articles/8536</a>
+</li></p>
+</ul>
+</section>
+</dd>
+</dl>
+</div>
+<div>
+<dl>
+<p><dt>
+なぜトヨタ自動車がAtCoderユーザーを必要としているのか
+</dt></p>
+<dd>
+<section>
+<p><p>
+トヨタ自動車は、皆様ご存じの通り、クルマを作っている会社です。クルマとITというと、自動運転が浮かぶ方が多いと思いますが、実は他にも様々な箇所でITが活用されています。クルマを作る上では、生産・物流・調達・販売と、あらゆる箇所にITが活用されています。例えば物流などのスケジュール管理は当然コンピュータで管理されており、当然最適化を行うことも出来ます。</p>
+</p>
+<p><img src="https://img.atcoder.jp/file/toyota/img/01.jpg"></p>
+<p></img></p>
+<p><p>
+トヨタ自動車ではさまざまな領域でソフトウェアエンジニアの活躍の機会が広がっています。自動運転などクルマの制御に関わるソフトウェア開発や、クルマの走行データ等を活用したコネクティッドサービスのためのソフトウェア開発やデータサイエンス、生産計画・調達・物流等の最適化、モビリティサービスのためのプラットフォーム開発など、ソフトウェア領域のあらゆるスキルセットが活かせる環境がトヨタ自動車には存在します。</p>
+</p>
+</section>
+</dd>
+</dl>
+</div>
+<div>
+<dl>
+<p><dt>
+トヨタ自動車の仕事内容と参加者へのメッセージ
+</dt></p>
+<dd>
+<h4 id="_2">**デジタル変革推進室 アルゴリズムグループ 主査 高橋直大 <a href="https://atcoder.jp/contests/abc370/users/chokudai"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p><span>
+chokudai
+</span>
+</a>**</p>
+<section>
+<p><p>
+デジタル変革推進室では、トヨタ自動車のデジタル化を進めている部署です。各部署にDXリーダーを置き、様々な部署から、デジタル化に関する意見を収集しています。アルゴリズムグループでは、そんな課題の中から、組合せ最適化などのアルゴリズムで解決できる課題に取り組んでいます。</p>
+</p>
+<p><p>
+AHCに非常に近い業務内容をしており、アルゴリズムを用いた問題解決能力が非常に重要な職場です！コンテストとは違い、問題設定自体を変えたり、本当にその問題を解けば良いかを確認する必要があるので、コミュニケーションを取るのを苦にしない必要はありますが、それさえあれば大丈夫です。現在僕がメインで開発を行っているのですが、手が足りずに困っているので、ぜひAtCoderのユーザをお待ちしています。</p>
+</p>
+</section>
+<hr />
+<h4 id="_3">**デジタル変革推進室 アルゴリズムグループ 主任 水口元尊 <a href="https://atcoder.jp/contests/abc370/users/m_m?contestType=heuristic"><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p><span>
+m_m
+</span>
+</a>**</p>
+<section>
+<p><p>
+私の所属する、デジタル変革推進室アルゴリズムGでは社内のデジタル化推進の一環として、複雑なスケジューリングや3Dパッキング問題など、通常最適解を見つけることが難しい課題に対応するために、ヒューリスティックアルゴリズムを用いた手法を活用し、業務効率化に取り組んでます。この種の課題は社内に数多く存在しており、そのため、アルゴリズムを深く理解し活用できるスキルには常に需要があります。</p>
+</p>
+<p><p>
+しかしながら、これらのスキルを持ち、課題を解決まで導ける人財はまだまだ少ないのが現状です。AtCoderユーザーの中には、アルゴリズムに強みを持つ方が多いと考えており、その力を活かし、活躍できる環境がトヨタ自動車にあると確信しています。このような機会を通して、弊社に少しでも興味を持っていただければ幸いです。</p>
+</p>
+</section>
+<hr />
+<h4 id="pf-ivi"><strong>ソフトウェアPF開発部 IVIソフトウェア開発室 指導職 富田京志</strong><a class="headerlink" href="#pf-ivi" title="Permanent link">&para;</a></h4>
+<section>
+<p><p>
+IVIソフトウェア開発室では、車載センターディスプレイで動作するソフトウェアの内製開発をしています。市場変化に素早く対応できるソフトウェアアーキテクチャの新規構築、車両データ活用機能の開発に携わっています。私が業務で使うアルゴリズムは二分探索程度で限定的ですが、AtCoderで培われたコーディングスキルや問題解決力は確実に業務に役立てられていると思います。AtCoderのレーティング問わず、プログラミングや問題解決に興味のある方をお待ちしています。</p>
+</p>
+</section>
+<hr />
+<h4 id="_4">**サービス技術部 主任 長内翔太 <a href="https://atcoder.jp/contests/abc370/users/edomondo"><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p><span>
+edomondo
+</span>
+</a>**</p>
+<section>
+<p><p>
+私は取扱説明書制作を担当しているのですが、自動車は約3万点の部品から成り立っており、取扱説明書の種類や数は膨大です。XMLデータからPDFやHTMLといった別のデータ形式に変換する作業にプログラムを活用しており、計算量の見積もりや実装力の面でアルゴリズムが役立っています。また、弊社の”現状に満足せず改善し続ける”風土は、AHCのようにより良いスコアを目指して考えることが好きな方には非常にマッチすると思います。少しでも弊社に興味を持っていただけたら幸いです。</p>
+</p>
+</section>
+<hr />
+<h4 id="ota">**デジタルソフト開発センター OTA推進室 岡井成遊 <a href="https://atcoder.jp/contests/abc370/users/seiyu0225"><a class="headerlink" href="#ota" title="Permanent link">&para;</a></h4>
+<p><span>
+seiyu0225
+</span>
+</a>**</p>
+<section>
+<p><p>
+現在、トヨタ自動車では、クルマに搭載されるコンピュータ(ECU<em>)に加え、車外からサービスを提供するサーバー向けのソフトウェアを自ら開発することにチャレンジし、その開発対象範囲を拡大させています！もちろん、私が所属するOTA推進室</em>*もその一翼を担ってお り、私は「高品質なソフトウェアを、より短いスパンでお客様にお届け」すべく、クルマにダウンロードした最新のソフトウェアを各ECUに配信するシステムの開発、及びプログラム開発技術の手の内化に向けた業務に日々取り組んでいます。トヨタ自動車には、AtCoderで鍛えられたソフトウェア人材が活躍できる場が多く用意されています。コンテストに参加されている皆様と、いつか一緒に仕事ができる日を楽しみにしています！</p>
+</p>
+<p><p>
+*ECU: Electronic Control Unit / クルマの機能を実現するシステムを電子回路を用いて制御する装置
+</p></p>
+<p><p>
+**OTA: Over The Air / 無線通信で車載ソフトウェアを安全・確実にアップデートする技術
+</p></p>
+</section>
+<hr />
+<h4 id="ms">**MS制御開発部 環境制御開発室役職 指導職 高橋聡史 <a href="https://atcoder.jp/contests/abc370/users/hyper_satoshi"><a class="headerlink" href="#ms" title="Permanent link">&para;</a></h4>
+<p><span>
+hyper_satoshi
+</span>
+</a>**</p>
+<section>
+<p><p>
+業務内容はエンジン制御の適合という仕事です。エンジン本体(ハード）のポテンシャルを最大限に引き出し、求められる性能を満足させる制御システムを開発・適合します。様々な制約条件の中で、エンジンを構成する多くの部品を最適な状態で制御させることで、性能の最大化を実現します。自分の決めた制御値は車両挙動に直結し変化として実感することもできます。拘りをもって味付けした乗り味のクルマが世界中で販売され、走り回っているのを見ることがやりがいにつながっています。</p>
+</p>
+<p><p>
+高品質な制御開発を行うことが最も重要であることは当然ですが、開発スピードの高速化が大変重要な任務になっています。既存の自動車メーカーだけでなく、EV車においては様々な企業が参入しています。痛感するのは開発スピードの速さ。我々も業務の高速化・効率化をもっと進めていかなければなりません。新しい開発スタイルに向かうために、アルゴリズムを活用できるプログラマーの皆様の力が必要です。魅力あるクルマをタイムリーにお客様にお届けしたい！「いいクルマづくり」を一緒にトライしませんか？</p>
+</p>
+</section>
+</dd>
+</dl>
+</div>
+<h4 id="_5"><strong>直近転職された人の紹介</strong><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h4 id="_6">**デジタル変革推進室アルゴリズムグループ  大野公平  （ヒューリスティック :<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p><span>
+青色
+</span>
+）**</p>
+<section>
+<p><p>
+前職では、IT 系の企業で MLOps と呼ばれる領域を専門としており、機械学習を用いたシステム開発から、運用までをエンジニアリングでサポートする仕事をしていました。競技プログラミングは 2018 年ごろから取り組んでおり、もう 6 年近い付き合いとなります。AHC にも積極的に参加していて、アルゴリズムを考えたり、学んだりすることが好きです。</p>
+</p>
+<p><p>
+トヨタ社内では、AtCoder で培った能力を活用できる案件が多数存在しています。競技プログラミングが好きな人間として、アルゴリズムが社会で価値を生んだり、誰かを喜ばせる場面に関われることをとても幸せに思っております。AtCoder に参加されている方々は、私と同様にこの分野に思い入れがある人が多いと思っており、そのような方々にとってとても楽しい環境であると確信しています。</p>
+</p>
+</section>
+<h4 id="_7">**デジタル変革推進室アルゴリズムグループ 田中翔一 <a href="https://atcoder.jp/contests/abc370/users/tanashou1?contestType=heuristic"><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p><span>
+tanashou1
+</span>
+</a>**</p>
+<section>
+<p><p>
+前職は物流業界で、数理最適化でドライバーさんの業務を支援するシステムを構築していました。ビジネス要求に対して、定式化・数理モデリングを行い、それを実現するデータの選定などもしていました。その前は技術コンサルタントをしており、メーカーさんなどの顧客を相手に課題解決を行っていました。</p>
+</p>
+<p><p>
+競技プログラミングを始めたのは、機械学習の文脈で動的計画法の概念に出会ったのがきっかけで、これを調べるうちにAtCoderにたどり着き参加し始めました。ヒューリスティックコンテストの方は、業務でコーディングする時間が減った時期があり、その頃にがっつりコーディングしたくなり始めました。</p>
+</p>
+<p><p>
+トヨタ自動車に興味を持ったのは、過去に電機メーカーで働いていたため製造業になじみがあったのと、もともとクルマが好きだったという理由からです。また、chokudaiがアルゴリズムグループの主査を務めていると聞き、製造業における数理的な課題解決に興味が湧き、自分もそこで力を発揮したいと考えて応募しました。</p>
+</p>
+<p><p>
+トヨタには解きがいのある課題と、魅力的な同僚がたくさんいます。まだまだ人員を募集していますのでぜひ応募してください。</p>
+</p>
+</section>
+<h3 id="_8"><strong>採用情報</strong><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<section>
+<p><p>
+トヨタ自動車株式会社の
+<b>
+中途採用
+</b>
+に興味関心があるかたはAtCoderJobsに掲載されているAtCoder社員による職業紹介のページからお申し込みください。</p>
+</p>
+</section>
+<section>
+<h4 id="_9"><strong>デジタル変革推進室 アルゴリズムグループ</strong><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ul>
+<p><li>
+<a href="https://jobs.atcoder.jp/offers/760">トヨタ自動車内における高度なアルゴリズムを用いた業務課題解決</a>
+</li></p>
+<ul>
+<p><li>
+AtCoderのレーティングやアルゴリズム構築能力を軸として転職活動に望みたい方はこちらの求人票からお申し込みください。
+</li></p>
+<p><li>
+「とりあえず話を聞く」を押すと、その方のためにアルゴリズムグループの説明会を行いますので、転職活動を真剣に考えている方はお気軽に押してください。
+</li></p>
+</ul>
+</ul>
+<h4 id="_10"><strong>その他の部署</strong><a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p>トヨタ自動車株式会社の求人票は <a href="https://toyota-career.snar.jp/">https://toyota-career.snar.jp/</a>からご確認ください。</p>
+<ul>
+<p><li>
+IT・情報システム部門
+</li></p>
+<p><li>
+未来創生
+</li></p>
+<p><li>
+車両技術
+</li>
+などの部門で、興味のある求人票がございましたら<a href="https://jobs.atcoder.jp/offers/400">こちら</a>からお申し込みください。</p>
+</ul>
+<p></section>
+<a href="https://atcoder.jp/toyota_recruit">
+<img src="https://img.atcoder.jp/img/banner_toyota_202403.png"></p>
+<p></img>
+</a></p>
+<hr />
+<h3 id="_11"><strong>配点</strong><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<section>
+<div>
+<table>
+<thead>
+<tr>
+<p><th>
+問題
+</th></p>
+<p><th>
+点数
+</th></p>
+</tr>
+</thead>
+<tbody>
+<tr>
+<p><td>
+A
+</td></p>
+<p><td>
+100
+</td></p>
+</tr>
+<tr>
+<p><td>
+B
+</td></p>
+<p><td>
+200
+</td></p>
+</tr>
+<tr>
+<p><td>
+C
+</td></p>
+<p><td>
+300
+</td></p>
+</tr>
+<tr>
+<p><td>
+D
+</td></p>
+<p><td>
+400
+</td></p>
+</tr>
+<tr>
+<p><td>
+E
+</td></p>
+<p><td>
+475
+</td></p>
+</tr>
+<tr>
+<p><td>
+F
+</td></p>
+<p><td>
+575
+</td></p>
+</tr>
+<tr>
+<p><td>
+G
+</td></p>
+<p><td>
+650
+</td></p>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr />
+<h3 id="_12"><strong>賞品</strong><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<section>
+<p><p>
+条件を満たす方へ抽選で50名にAmazonギフト券10,000円分を進呈します。未成年の参加者は、賞品の受け取りについて保護者の同意を得てください。</p>
+</p>
+</section>
+<h4 id="_13"><strong>賞品に関する注意事項</strong><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<section>
+<ul>
+<p><li>
+少なくとも1問以上の正解が必要です。
+</li></p>
+<p><li>
+賞品は日本国内に在住の方のみに、Amazonギフトカードにてお送りいたします。
+</li></p>
+<p><li>
+受賞対象者になるには、参加登録情報の全ての必須項目を記入していただく必要があります。未記入の必須項目がある場合は受賞対象外とさせていただきます。
+</li></p>
+</ul>
+<p><p>
+賞品の受け取り方法などについては、コンテスト終了後に受賞された方へメールにてご連絡させていただきます。運営事務局が提示させていただく期限内に必要事項をご返信いただけない場合はお送りできかねますので、ご注意ください。</p>
+</p>
+</section>
+<hr />
+<h3 id="_14"><strong>注意事項</strong><a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<section>
+<p>
+</p>
+<ul>
+<p><li>
+大学生および大学院生の方には弊社のインターンシップや採用イベント等のご案内をさせていただくことがございます。
+</li></p>
+<p><li>
+賞品に関しては参加登録情報にて、
+<span>
+全ての項目
+</span>
+を記入していただく必要がございます。未記入の項目がある場合は賞品対象外とさせていただきます。
+</li></p>
+<p><li>
+日本国内に居住されていない方は賞品対象外となります。
+</li></p>
+<p><li>
+何らかの理由により賞品配送が完了しなかった場合、ご登録いただいたメールアドレスにご連絡させて頂きます。2週間以内にご返信がない場合は賞品対象外となります。
+</li></p>
+</ul>
+<p>
+</p>
+</section>
+<hr />
+<h3 id="_15"><strong>ルール</strong><a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<section>
+<ol>
+<p><li>
+コンテスト中に問題に正解すると点数を獲得できます。
+</li></p>
+<p><li>
+順位は総合得点で決定します。
+</li></p>
+<p><li>
+同点の場合は提出時間の早い人が上の順位になります。
+</li></p>
+<p><li>
+誤答を提出するたびにペナルティが加算されます。このコンテストのペナルティは5分です。詳細は画面下部の「ルール」をご覧ください。
+</li></p>
+</ol>
+<p><p>
+このコンテストは full-feedback 形式のコンテストです。コンテスト中に提出された結果だけで順位が決定します。</p>
+</p>
+</section>
+<hr />
+<h3 id="_16"><strong>便利情報</strong><a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<ul>
+<p><li>
+<a href="https://atcoder.jp/">トップページ</a>
+</li></p>
+<p><li>
+<a href="https://atcoder.jp/post/37">参加方法</a>
+</li></p>
+<p><li>
+<a href="https://atcoder.jp/contests/practice">提出の練習ページ</a>
+</li></p>
+</ul>
+<p></span></p>
+<p></span></p>
+</div>
+</div>
+<div class="tabbed-block">
+<div>
+<p><script>
+$(function () {
+      $(".js-accordion-title").on("click", function() {
+      $(this).next().slideToggle(500);
+      $(this).toggleClass("open",500);
+      });
+  });</p>
+</script>
+<p><span></p>
+<p><span></p>
+<h3 id="contest-information"><strong>Contest Information</strong><a class="headerlink" href="#contest-information" title="Permanent link">&para;</a></h3>
+<ul>
+<p><li>
+Duration: 100 minutes
+</li></p>
+<p><li>
+Rated Range: 0 - 
+<span>
+1999
+</span></p>
+</li>
+</ul>
+<hr />
+<h3 id="point-values"><strong>Point Values</strong><a class="headerlink" href="#point-values" title="Permanent link">&para;</a></h3>
+<div>
+<div>
+<table>
+<thead>
+<tr>
+<p><th>
+Task
+</th></p>
+<p><th>
+Score
+</th></p>
+</tr>
+</thead>
+<tbody>
+<tr>
+<p><td>
+A
+</td></p>
+<p><td>
+100
+</td></p>
+</tr>
+<tr>
+<p><td>
+B
+</td></p>
+<p><td>
+200
+</td></p>
+</tr>
+<tr>
+<p><td>
+C
+</td></p>
+<p><td>
+300
+</td></p>
+</tr>
+<tr>
+<p><td>
+D
+</td></p>
+<p><td>
+400
+</td></p>
+</tr>
+<tr>
+<p><td>
+E
+</td></p>
+<p><td>
+475
+</td></p>
+</tr>
+<tr>
+<p><td>
+F
+</td></p>
+<p><td>
+575
+</td></p>
+</tr>
+<tr>
+<p><td>
+G
+</td></p>
+<p><td>
+650
+</td></p>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="contest-rules"><strong>Contest Rules</strong><a class="headerlink" href="#contest-rules" title="Permanent link">&para;</a></h3>
+<p>This contest is full-feedback (solutions are judged during the contest).</p>
+<p>When you solve a problem, you get a score assigned to it.
+    Competitors are ranked first by total scores, then by penalties.
+    The penalties are computed as (the time you spend to get your current score) + (5 minutes) * (the number of
+    incorrect attempts).</p>
+<h3 id="useful-links"><strong>Useful Links</strong><a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h3>
+<ul>
+<p><li>
+<a href="https://atcoder.jp/">AtCoder top page</a>
+</li></p>
+<p><li>
+<a href="https://atcoder.jp/post/2">How to participate</a>
+</li></p>
+<p><li>
+<a href="https://atcoder.jp/contests/practice">Practice contest</a>
+</li></p>
+</ul>
+<p></span></p>
+<p></span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://yifen9.github.io" target="_blank" rel="noopener" title="yifen9.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M192 32c0 17.7 14.3 32 32 32 123.7 0 224 100.3 224 224 0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32m0 96c0 17.7 14.3 32 32 32 70.7 0 128 57.3 128 128 0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192-17.7 0-32 14.3-32 32m-96 16c0-26.5-21.5-48-48-48S0 117.5 0 144v224c0 79.5 64.5 144 144 144s144-64.5 144-144-64.5-144-144-144h-16v96h16c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<yifeng.li@studenti.unitn.it>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9V320c0 28.4-10.8 57.7-22.3 80.8-6.5 13-13.9 25.8-22.5 37.6-3.2 4.3-4.1 9.9-2.3 15s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7.3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7-3.2-14.2-7.5-28.7-13.5-42v-24.6c0-30.2 10.2-58.7 27.9-81.5 12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5.8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1l280.6-101c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1c-7.6-2.7-15.6-4.1-23.7-4.1M128 408c0 35.3 86 72 192 72s192-36.7 192-72l-15.3-145.4L354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6l-142.2-51.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<yifen9@yandex.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M153.1 315.8 65.7 512H2l96-209.8c-45.1-22.9-75.2-64.4-75.2-141.1C22.7 53.7 90.8 0 171.7 0H254v512h-55.1V315.8zm45.8-269.3h-29.4c-44.4 0-87.4 29.4-87.4 114.6 0 82.3 39.4 108.8 87.4 108.8h29.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/yifen9" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/yifen9" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.tabs.link", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+      
+        <script src="../../../overrides/extra.js"></script>
+      
+    
+  </body>
+</html>

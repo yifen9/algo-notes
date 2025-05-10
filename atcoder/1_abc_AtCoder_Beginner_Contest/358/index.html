@@ -1,0 +1,2887 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yifen9.github.io/algo-notes/atcoder/1_abc_AtCoder_Beginner_Contest/358/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+    
+    
+      
+        <title>ABC > 358 - Algorithm Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../overrides/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#abc-358" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Algorithm Notes" class="md-header__button md-logo" aria-label="Algorithm Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Algorithm Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ABC &gt; 358
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yifen9/algo-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    algo-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../template/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Template
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AtCoder
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../aoj/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AOJ
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Algorithm Notes" class="md-nav__button md-logo" aria-label="Algorithm Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Algorithm Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yifen9/algo-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    algo-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Template
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Template
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../template/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Beginner Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Beginner Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../2_arc_AtCoder_Regular_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Regular Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Regular Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../3_agc_AtCoder_Grand_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Grand Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Grand Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../4_ahc_AtCoder_Heuristic_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Heuristic Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Heuristic Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../aoj/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AOJ
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            AOJ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../aoj/courses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Courses
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Courses
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../aoj/courses/2_ITP1_Introduction_to_Programming_I/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    2 Introduction to Programming I
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2 Introduction to Programming I
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tasks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contest-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contest Statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contest Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      スポンサー
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      **決勝進出者
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codequeen-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      CodeQUEEN 2024 とは？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      開催概要
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="開催概要">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      日程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      参加資格
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      決勝会場
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      交通費
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      宿泊
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      賞金
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="賞金">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      決勝賞金
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      新人賞
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      メッセージ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="メッセージ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      株式会社いい生活
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      エムシーデジタル株式会社
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      株式会社エリジオン
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      STORES 株式会社
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      フォルシア株式会社
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#magicpod" class="md-nav__link">
+    <span class="md-ellipsis">
+      株式会社MagicPod
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      フリー株式会社
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      株式会社メルカリ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atcoder-akensho" class="md-nav__link">
+    <span class="md-ellipsis">
+      開催する意図（文責：AtCoder株式会社 akensho）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algoparade" class="md-nav__link">
+    <span class="md-ellipsis">
+      合同会社 AlgoParade とは
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      コンテスト情報
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      予選配点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      ルール
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      便利情報
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sponsors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sponsors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contest-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contest Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Point Values
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contest-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contest Rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful Links
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="abc-358">ABC &gt; 358<a class="headerlink" href="#abc-358" title="Permanent link">&para;</a></h1>
+<p><small><a href="../">← Back</a></small></p>
+<h2 id="basic-info">Basic Info<a class="headerlink" href="#basic-info" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>ID:    </strong>358</li>
+<li><strong>Class: </strong>AtCoder Beginner Contest</li>
+<li><strong><a href="https://atcoder.jp/contests/abc358">Origin</a></strong></li>
+<li><strong><a href="https://download-directory.github.io/?url=https://github.com/yifen9/algo-notes/tree/main/src/atcoder/1_abc_AtCoder_Beginner_Contest/358" download>Download</a></strong></li>
+</ul>
+<h2 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Label</th>
+<th>ID</th>
+<th>Item</th>
+<th>Size</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="a_A_Welcome_to_AtCoder_Land/">Welcome to AtCoder Land</a></td>
+<td>A</td>
+<td>a</td>
+<td>2 items</td>
+<td>3 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc358/tasks/abc358_a">abc358_a</a></td>
+</tr>
+<tr>
+<td><a href="b_B_Ticket_Counter/">Ticket Counter</a></td>
+<td>B</td>
+<td>b</td>
+<td>2 items</td>
+<td>7 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc358/tasks/abc358_b">abc358_b</a></td>
+</tr>
+<tr>
+<td><a href="c_C_Popcorn/">Popcorn</a></td>
+<td>C</td>
+<td>c</td>
+<td>2 items</td>
+<td>5 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc358/tasks/abc358_c">abc358_c</a></td>
+</tr>
+<tr>
+<td><a href="d_D_Souvenirs/">Souvenirs</a></td>
+<td>D</td>
+<td>d</td>
+<td>2 items</td>
+<td>5 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc358/tasks/abc358_d">abc358_d</a></td>
+</tr>
+<tr>
+<td><a href="e_E_Alphabet_Tiles/">Alphabet Tiles</a></td>
+<td>E</td>
+<td>e</td>
+<td>2 items</td>
+<td>4 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc358/tasks/abc358_e">abc358_e</a></td>
+</tr>
+<tr>
+<td><a href="f_F_Easiest_Maze/">Easiest Maze</a></td>
+<td>F</td>
+<td>f</td>
+<td>2 items</td>
+<td>10 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc358/tasks/abc358_f">abc358_f</a></td>
+</tr>
+<tr>
+<td><a href="g_G_AtCoder_Tour/">AtCoder Tour</a></td>
+<td>G</td>
+<td>g</td>
+<td>2 items</td>
+<td>5 KiB</td>
+<td><a href="https://atcoder.jp/contests/abc358/tasks/abc358_g">abc358_g</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="contest-statement">Contest Statement<a class="headerlink" href="#contest-statement" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">日本語</label><label for="__tabbed_1_2">English</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div>
+<p><span></p>
+<p><span></p>
+<div>
+<h3 id="_1"><strong>スポンサー</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div>
+<div>
+<div>
+<p><div>
+<a href="https://www.e-seikatsu.info/">
+<img src="https://img.atcoder.jp/abc308/e-seikatsu-420x150.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://www.mcdigital.jp/">
+<img src="https://img.atcoder.jp/abc358/MCD_logo.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://jobs.atcoder.jp/offers/list?f.CompanyScreenName=elysium">
+<img src="https://img.atcoder.jp/abc358/ELYSIUM_logo.jpg"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://jobs.st.inc/engineer">
+<img src="https://img.atcoder.jp/abc358/STORES_logo.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://www.forcia.com/jobs/">
+<img src="https://img.atcoder.jp/abc308/forcia-420x150.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://magicpod.com/">
+<img src="https://img.atcoder.jp/abc358/magicpod_logo2.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://corp.freee.co.jp/">
+<img src="https://img.atcoder.jp/abc308/freee-420x150.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://careers.mercari.com/jp/students/">
+<img src="https://img.atcoder.jp/abc358/mercari_logo.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+</div>
+<p></div>
+<a href="https://atcoder.jp/contests/abc358#messages-from-sponsors">メッセージはこちら </a>
+</div></p>
+<h3 id="_2">**決勝進出者<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code>    **
+</code></pre></div>
+
+<section>
+<p><p>
+公開を許可した人のみ掲載しています
+</p></p>
+<table>
+<thead>
+<tr>
+<p><th>
+AtCoder ID
+</th></p>
+<p><th>
+出場回数
+</th></p>
+</tr>
+</thead>
+<tbody>
+<tr>
+<p><td>
+ngtkana
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+dokin
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+clara775
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+momohara
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+mayocorn
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+Polina
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+Noimin
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+Ayuna
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+iro_
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+kurrrru
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+n7natumi77
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+moon17
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+fairy_lettuce
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+e_e99
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+math_program_
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+itokoi
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+obakedesuyone
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+tomoe_ry
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+sakasama
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+trinh312
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+yaneko
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+tohri
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+HydrogenFluoride
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+nashisandesu
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+tenba
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+abab
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+Miaosakurai
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+KinoRiW
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+m_blue_moon
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+Shion_urei
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+YTa09
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+moepy_stats
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+kiyomi_snow
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+guriko
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+CatAzusa
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+arisanagrande
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+lusciousflan
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+mai_kac
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+mimam
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+a0r1ng0
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+Hnawate
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+wenshan
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+shiborimame
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+settee
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+Hhoge
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+peach2587
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+donguriko_ko
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+Astroseek
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+ManekiCat
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+Runa117
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+neko10
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+Orange_pekoe
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+<tr>
+<p><td>
+tsuku_shi
+</td></p>
+<p><td>
+2年連続
+</td></p>
+</tr>
+<tr>
+<p><td>
+umorumo
+</td></p>
+<p><td>
+初出場
+</td></p>
+</tr>
+</tbody>
+</table>
+<p><p>
+お問い合わせ先: info@algoparade.jp
+</p></p>
+</section>
+<h3 id="codequeen-2024"><strong>CodeQUEEN 2024 とは？</strong><a class="headerlink" href="#codequeen-2024" title="Permanent link">&para;</a></h3>
+<section>
+<p><p>
+AtCoder 株式会社と合同会社 AlgoParade が共催して行うプログラミングコンテストです。コンテストは予選・決勝の2回行われます。予選はオンラインでの実施となり、AtCoder
+                アカウントをお持ちの方であれば参加資格は問いません。決勝は下記の方法で選抜された60名に資格があり、ワテラスコモンホールで実施します。決勝への参加を希望する方は、予選における参加登録の際、連絡に必要な個人情報の入力をお願いしています。</p>
+</p>
+</section>
+<hr />
+<h3 id="_3"><strong>開催概要</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="_4"><strong>日程</strong><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<ul>
+<p><li>
+予選 2024年6月15日(土) 21:00~22:40 
+<span>
+※予選はインターネット上で行います
+</span></p>
+</li>
+<p><li>
+決勝 2024年8月3日(土) 12:00~18:30 
+<span>
+※イベント全体のスケジュールです
+</span></p>
+</li>
+</ul>
+<h4 id="_5"><strong>参加資格</strong><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ul>
+<p><li>
+予選
+</li></p>
+<ul>
+<p><li>
+AtCoderアカウントをお持ちの方
+</li></p>
+</ul>
+<p><li>
+決勝（60名）
+</li></p>
+<ul>
+<p><li>
+以下の方法で選抜された60名
+</li></p>
+<ol>
+<li>
+<p><b>
+現在女性として生活されている日本国内在住の方で
+</b>
+、所属区分が 
+<b>
+"高等学校・高等専門学校（3年生以下）"
+</b>
+である参加者のうち、予選の上位20名 
+</li></p>
+<li>
+<p><b>
+現在女性として生活されている日本国内在住の方で
+</b>
+、所属区分が 
+<b>
+"大学・大学院・短期大学・専門学校・高等専門学校（4年生以上）"
+</b>
+である参加者のうち、予選の上位20名</p>
+</li>
+<li>
+<p><b>
+現在女性として生活されている日本国内在住の方で
+</b>
+、所属区分が 
+<b>
+"その他"
+</b>
+である参加者のうち、予選の上位20名 
+</li></p>
+</ol>
+<p><li>
+※未成年の方は決勝参加に際して保護者の同意が必要です。事前に同意書を記入いただき、当日ご提出いただきます。
+</li></p>
+<p><li>
+※中学生以下の方は決勝にご参加いただけません。
+</li></p>
+<p><li>
+※決勝進出者のリストおよび決勝戦の順位表は、掲載を希望されない方を伏せた上で公開します。
+</li></p>
+</ul>
+</ul>
+<h4 id="_6"><strong>決勝会場</strong><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ul>
+<p><li>
+ワテラスコモンホール
+</li></p>
+<p><li>
+〒101-0063 東京都千代田区神田淡路町2丁目101番地
+</li></p>
+<p><li>
+当日の集合場所は、案内メールにてお伝えします。
+</li></p>
+</ul>
+<h4 id="_7"><strong>交通費</strong><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p><p>
+関東圏外の決勝参加者の方には予算内で交通費を支給いたします。予選終了後にメールで登録フォームをお送りいたしますので、そちらにご回答ください。
+</p></p>
+<h4 id="_8"><strong>宿泊</strong><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<section>
+<p><p>
+遠方から参加される方には、予算内で下記の通り宿泊先をご用意いたします。予選終了後にメールで登録フォームをお送りいたしますので、そちらにご回答ください。
+</p></p>
+<ol>
+<p><li>
+関東圏の方：なし
+</li></p>
+<p><li>
+沖縄/北海道の方：2泊分
+</li></p>
+<p><li>
+上記以外の方：1泊分（上記以外でも2泊分を希望される場合はご相談ください）
+</li></p>
+</ol>
+</section>
+<h3 id="_9"><strong>賞金</strong><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><b>
+賞金総額50万円！
+</b></p>
+<h4 id="_10"><strong>決勝賞金</strong><a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<section>
+<p><p>
+決勝コンテストの順位に応じて下記の賞金を授与します。
+</p></p>
+<div>
+<div>
+<table>
+<thead>
+<tr>
+<p><th>
+順位
+</th></p>
+<p><th>
+賞金
+</th></p>
+</tr>
+</thead>
+<tbody>
+<tr>
+<p><td>
+1位
+</td></p>
+<p><td>
+300,000円
+</td></p>
+</tr>
+<tr>
+<p><td>
+2位
+</td></p>
+<p><td>
+100,000円
+</td></p>
+</tr>
+<tr>
+<p><td>
+3位
+</td></p>
+<p><td>
+30,000円
+</td></p>
+</tr>
+<tr>
+<p><td>
+4位
+</td></p>
+<p><td>
+20,000円
+</td></p>
+</tr>
+<tr>
+<p><td>
+5位
+</td></p>
+<p><td>
+10,000円
+</td></p>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<h4 id="_11"><strong>新人賞</strong><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<section>
+<p><p>
+下記の条件を全て満たす参加者を対象とし、
+<b>
+対象者内での予選の順位に応じて
+</b>
+下記の通り賞品を贈呈します。
+</p></p>
+<ol>
+<p><li>
+現在女性として生活されている
+</li></p>
+<p><li>
+日本国内在住
+</li></p>
+<p><li>
+所属区分が 
+<b>
+"中学生以下"
+</b>
+である
+</li></p>
+<p><li>
+参加時にメールアドレスを記載している（賞品獲得のご連絡を差し上げます）
+</li></p>
+</ol>
+<div>
+<div>
+<table>
+<thead>
+<tr>
+<p><th>
+対象者内での順位
+</th></p>
+<p><th>
+賞品
+</th></p>
+</tr>
+</thead>
+<tbody>
+<tr>
+<p><td>
+1位
+</td></p>
+<p><td>
+図書カード10,000円分
+</td></p>
+</tr>
+<tr>
+<p><td>
+2位〜11位
+</td></p>
+<p><td>
+図書カード3,000円分
+</td></p>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<hr />
+<h3 id="_12"><strong>メッセージ</strong><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<div>
+<h4 id="_13"><strong><a href="https://www.e-seikatsu.info/">株式会社いい生活</a></strong><a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<div>
+<p><img src="https://img.atcoder.jp/abc358/iiseikatsu.png"></p>
+<p></img></p>
+</div>
+<p><p>
+こんにちは！いい生活は「心地いいくらしが循環する、社会のしくみをつくる」ことを目標に、日本の不動産マーケットの改革に取り組んでいるSaaSプロバイダです。
+                昨年の決勝戦でたくさんの女性競プロerの姿を目にして、CodeQUEEN の社会的意義を改めて感じ、今年もスポンサーさせていただきました。</p>
+<p>不動産というと少々とっつきにくい印象があるかもしれませんが、エンジニア目線では多岐にわたる大量のデータを扱う技術力と深いドメイン知識を掛け合わせて課題を解決する、とてもやりがいを感じる仕事です。</p>
+<p>開発メンバーには競プロ経験者も多く、コンテストを通じて培った問題解決能力を発揮しながら、日々の仕事に取り組んでいます。</p>
+<p>今年の大会でも、参加者の皆さんが全力を出し切って楽しめることを祈っています。 (専務取締役CTO 松崎)</p>
+<p>男女問わず、エンジニアの仕事内容は新機能の開発から運用保守まで幅広く、私も入社1年目でフロントエンドの開発やAWSを使ったインフラの仕事を経験しました。どういうコードを書けばイメージ通りに作れるかを試行錯誤するのはパズルを解く感覚に近く、面白い仕事だなと感じています。</p>
+<p>決勝会場でみなさんとお会いできることを楽しみにしています！ (エンジニア 山田)</p>
+</p>
+</div>
+<hr />
+<div>
+<h4 id="_14"><strong><a href="https://www.mcdigital.jp/">エムシーデジタル株式会社</a></strong><a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<div>
+<p><img src="https://img.atcoder.jp/abc358/MCD.png"></p>
+<p></img></p>
+</div>
+<p><p>
+皆さんこんにちは！企業のDXをテクノロジーの力を駆使して支援するエムシーデジタル（MC Digital）です。MC Digital
+                は現在約70名の会社ですが、プログラミングコンテスト・コンペが好きなメンバーが数多く在籍し、日々の業務でその実力を発揮しています。</p>
+<p>コンテスト終了後にはオフィスや Slack 上で感想戦が行われています。また、自己研鑽のための書籍等の購入補助精度、 Kaggle
+                コンペのマシンリソース補助制度、コンテストの成績に関する社内表彰制度など、会社としてコンテスト・コンペの参加を支援する環境も整っています。</p>
+</p>
+<p><p>
+当社にも女性エンジニアが在籍していますが、その比率はまだ男性の方が多いというのが現実です。今回の大会が、女性エンジニア・データサイエンティストの活躍や拡大を後押しするきっかけになることを期待しています。</p>
+<p>そして、参加者の皆さまが今大会を楽しみながら、実力を十分に発揮できることを祈っています。</p>
+</p>
+</div>
+<hr />
+<div>
+<h4 id="_15"><strong><a href="https://jobs.atcoder.jp/offers/list?f.CompanyScreenName=elysium">株式会社エリジオン</a></strong><a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<div>
+<p><img src="https://img.atcoder.jp/abc358/ELYSIUM.png"></p>
+<p></img></p>
+</div>
+<p><p>
+株式会社エリジオンは、3次元形状処理とデータ変換技術を基盤に、主に製造業向けのソフトウェアを企画・開発している独立系ベンチャー企業です。</p>
+<p>私たちの開発業務には、競技プログラマが日々研鑽を積んでいるような、問題の整理と定式化、アルゴリズムの構築・計算量の評価、そして正確な実装といった能力が必要不可欠です。</p>
+<p>例えば、画像中に記述された問題は、私たちが実際に業務で直面した課題を整理・単純化した結果を競技プログラミングで出題されるような形式で表現したものです。
+                このように、私たちの業界には競技プログラマの優れたスキルと才能を活かす機会があふれています。</p>
+<p>私たちは、全ての人が平等にチャンスを得て、最大限に能力を発揮し、その結果が正当に評価される社会を望んでいます。
+                この大会がその一助となり、参加者の皆様が実力を発揮されることを心から願っています。</p>
+</p>
+</div>
+<hr />
+<div>
+<h4 id="stores"><strong><a href="https://jobs.st.inc/engineer">STORES 株式会社</a></strong><a class="headerlink" href="#stores" title="Permanent link">&para;</a></h4>
+<div>
+<p><img src="https://img.atcoder.jp/abc358/STORES.png"></p>
+<p></img></p>
+</div>
+<p><p>
+はじめまして、STORES です！私たちは「Just for
+                Fun」をミッションに、こだわりや情熱、たのしみによって駆動される経済の発展に寄与することを目指しています。ご自分で商売を営む中小事業者の皆さんにむけて、ネットショップ開設・POSレジ・キャッシュレス決済・オンライン予約システム・アプリ開発など、お店のデジタル化を総合的に支援するサービスを展開しています。</p>
+<p>STORES
+                は、プログラミングが好きで、難しい課題を解決することに情熱を持つメンバーが集まっています。また一人ひとりのこだわりや意欲を起点に、スキルや知識を伸ばしていくことを大切にしていて、研修やカンファレンスの参加費や交通費をサポートする制度があります。</p>
+<p>プログラミングを追求し、プログラミングを楽しむために本大会に参加しているみなさんを応援しています！がんばってください！</p>
+</p>
+</div>
+<hr />
+<div>
+<h4 id="_16"><strong><a href="https://www.forcia.com/jobs/">フォルシア株式会社</a></strong><a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<div>
+<p><img src="https://img.atcoder.jp/abc358/b3e935b3c1a477786cc436ef942503e2.png"></p>
+<p></img></p>
+</div>
+<p><p>
+フォルシア株式会社は高速検索技術を軸に事業を拡大させているIT企業です。
+</p></p>
+<p><p>
+会社公認の競技プログラミング部では、毎週部署を越えて社員が集まり、コンテストの復習会やオンサイトイベントの準備をしています。
+</p></p>
+<p><p>
+私は競プロをきっかけにエンジニアになりました。「AC」と「WA」で忖度なく評価される世界に飛び込みスキルを磨いたことで、いまエンジニアとして微力ながら社会に貢献できていると感じています。
+                CodeQUEENをきっかけに、プログラミングが性別によらず楽しく取り組める分野だと広まることを願っています。 今年も優勝目指してがんばるぞ！</p>
+</p>
+</div>
+<hr />
+<div>
+<h4 id="magicpod"><strong><a href="https://magicpod.com/">株式会社MagicPod</a></strong><a class="headerlink" href="#magicpod" title="Permanent link">&para;</a></h4>
+<div>
+<p><img src="https://img.atcoder.jp/abc358/MagicPod.png"></p>
+<p></img></p>
+</div>
+<p><p>
+こんにちは！AIテスト自動化プラットフォーム「MagicPod」です。
+</p></p>
+<p><p>
+弊社にはAtCoder緑〜青色ランクのメンバーや、育児をしながら昨年決勝進出したメンバー、女性VP of
+                Technologyなど、優秀なメンバーが多数在籍しています。</p>
+<p>自己研鑽を支援する制度や個人に合わせて柔軟に働ける環境も整っており、エンジニア離職率は過去6年間ゼロ(2024年4月現在)、育児休暇の取得率は男女合わせて100％です。</p>
+</p>
+<p><p>
+今大会が、女性エンジニアの役割と存在感を高める契機となること、参加されている皆さんのチャンスを広げるきっかけとなることを願っています。</p>
+<p>決勝では会場で皆さんを直接応援させてもらいますので、ぜひ一緒に本大会を盛り上げましょう！</p>
+</p>
+</div>
+<hr />
+<div>
+<h4 id="_17"><strong><a href="https://corp.freee.co.jp/">フリー株式会社</a></strong><a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<div>
+<p><img src="https://img.atcoder.jp/abc358/freee.png"></p>
+<p></img></p>
+</div>
+<p><p>
+freeeは「スモールビジネスを、世界の主役に。」
+                をミッションに掲げ、「だれもが自由に経営できる統合型経営プラットフォーム」の構築を目指しています。そのミッション・ビジョンの実現には、freeeの従業員自身が多様な価値観や視点を持ってプロダクトを作ることが必要であり、だからこそひとりひとりが自然体でパフォーマンスを発揮できる環境づくりにも取り組んでいます。</p>
+</p>
+<p><p>
+また、freeeの開発には、企業が成長するにつれ増えていく取引や勤怠のレコードをリアルタイムに集計する計算効率への意識や、年々変化する法律の複雑な仕様をロジックに変換し、正確にコードに落とし込む能力が要求され、AtCoderユーザーの方々が持つ「問題に対して適切なデータ構造とアルゴリズムを選定する能力」や「エッジケースを考慮しながら素早く実装を行う能力」は大いに役立つと考えています。
+                この大会を通じてエンジニアリングにより一層興味を持ったり、今後のキャリアを考えるきっかけになることを願っています。</p>
+</p>
+</div>
+<hr />
+<div>
+<h4 id="_18"><strong><a href="https://careers.mercari.com/jp/students/">株式会社メルカリ</a></strong><a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<div>
+<p><img src="https://img.atcoder.jp/abc358/mercari.png"></p>
+<p></img></p>
+</div>
+<p><p>
+メルカリは、「あらゆる価値を循環させ、あらゆる人の可能性を広げる」というミッションの元、フリマアプリ「メルカリ」や、スマホ決済サービス「メルペイ」を提供し、多くのお客さまにご利用いただいています。日々大量のデータが発生し、複雑な計算を駆使してお客さまに価値を届けることに挑戦しています。</p>
+<p>50ヵ国を超えるメンバーが集うメルカリは、I&amp;D（インクルージョン＆ダイバーシティ）の体現に取り組んでいます。多様なバックグラウンドを持つ人々が活躍できる職場を目指しており、活躍する女性エンジニアも沢山います。</p>
+<p><a href="https://about.mercari.com/inclusion-diversity/">メルカリのI&amp;Dへの取り組み</a></p>
+<p>競技プログラミングに熱心に取り組む皆さんの技術力や実装力は、どんな挑戦にも活かせる強みです。本大会を通じて、さらなるスキルアップを目指し、自信を持ってチャレンジしてください！</p>
+</p>
+</div>
+<hr />
+<h3 id="atcoder-akensho"><strong>開催する意図（文責：AtCoder株式会社 akensho）</strong><a class="headerlink" href="#atcoder-akensho" title="Permanent link">&para;</a></h3>
+<section>
+<p><p>
+日本国内における女性とデジタル・STEM教育に関する課題は以下の通りです。
+</p></p>
+<p>
+</p>
+<p><blockquote>
+日本の初等・中等教育の女子学生は、OECD の実施する学習到達度調査（PISA） の数学に
+                おいて、G7中最高位の得点を獲得していますが、STEM（科学・技術・工学・数学）分野の高等教育修了者に占める女性の割合は 16.7%と G7 中最下位となっています。
+</blockquote></p>
+<p>
+</p>
+<p><p>
+<a href=" https://www.mofa.go.jp/mofaj/files/100410947.pdf">https://www.mofa.go.jp/mofaj/files/100410947.pdf</a>（引用元）
+                <a href="https://www.mofa.go.jp/mofaj/fp/hr_ha/page22_003948.html">https://www.mofa.go.jp/mofaj/fp/hr_ha/page22_003948.html</a>（参考情報）</p>
+</p>
+<p><p>
+日本国内の男女比がほぼ1:1であることを考慮すると、STEM分野において男女比が偏っていることは明らかです。
+</p></p>
+<p><p>
+このような偏りが発生する原因の一つとして、歴史的、社会的な風習（無意識の偏見）が指摘されています。このような取り組みによって、今までプログラミングやSTEM分野に興味がなかった方、注目していなかった方々の参加を促すとともに、性別に関係なく、誰もがプログラミングに熱中することが当たり前だという社会的な合意を目指しています。</p>
+</p>
+<p><p>
+次に、STEM分野における高等教育修了者の性別偏りが引き起こす産業的な課題について触れます。特に、ICT産業に身を置く一人として、特定産業における労働力の偏りが引き起こす深刻な懸念を共有します。超少子高齢化が進む日本では、産業間の労働力争奪戦が今後一層激化すると見込まれます。特に、第4次産業革命の進展に伴い、ソフトウェアやICT産業への人材流入が不足すると、国際競争力の低下を招くリスクがあります。これは単に差別や機会平等の問題に留まらない、より深刻な課題です。</p>
+</p>
+<p>
+<p><b>
+教育関係者および保護者のみなさまへ
+</b></p>
+</p>
+<p><p>
+筆者は、性別がプログラミングスキルに影響を与えるとは考えておらず、そのような主張を支持する確かな研究も存在しません。コンピュータの世界で成功を収めることは、誰にとっても挑戦的です。簡単なことではないかもしれません。一生、学習を続ける覚悟が必要かもしれません。しかしながら、もし子どもがこの分野に興味を持っているのであれば、どうか背中を押して支えてあげてください。</p>
+</p>
+</section>
+<hr />
+<section>
+<p><p>
+このコンテストが開催されることで、他のオンサイトコンテストの開催回数が減ることはありません。AtCoder上で開催されていた他のコンテストにおいて、予選を勝ち抜いて本選に進出されていた方々の機会は維持されます。</p>
+</p>
+</section>
+<hr />
+<h3 id="algoparade"><strong>合同会社 AlgoParade とは</strong><a class="headerlink" href="#algoparade" title="Permanent link">&para;</a></h3>
+<section>
+<p><p>
+合同会社 AlgoParade とは <a href="https://atcoder.jp/users/kenkoooo">
+<span>
+kenkoooo
+</span>
+</a>が AtCoder などで様々なプログラミングコンテストを開催していくために設立した会社です。 
+</p></p>
+<p><p>
+お問い合わせ: info@algoparade.jp
+</p></p>
+</section>
+<hr />
+<h3 id="_19"><strong>コンテスト情報</strong><a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<section>
+<ul>
+<p><li>
+コンテスト時間: 100 分
+</li></p>
+<p><li>
+レーティング更新対象: 0 - 
+<span>
+1999
+</span></p>
+</li>
+</ul>
+</section>
+<h3 id="_20"><strong>予選配点</strong><a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<section>
+<div>
+<div>
+<table>
+<thead>
+<tr>
+<p><th>
+問題
+</th></p>
+<p><th>
+点数
+</th></p>
+</tr>
+</thead>
+<tbody>
+<tr>
+<p><td>
+A
+</td></p>
+<p><td>
+100
+</td></p>
+</tr>
+<tr>
+<p><td>
+B
+</td></p>
+<p><td>
+200
+</td></p>
+</tr>
+<tr>
+<p><td>
+C
+</td></p>
+<p><td>
+300
+</td></p>
+</tr>
+<tr>
+<p><td>
+D
+</td></p>
+<p><td>
+350
+</td></p>
+</tr>
+<tr>
+<p><td>
+E
+</td></p>
+<p><td>
+475
+</td></p>
+</tr>
+<tr>
+<p><td>
+F
+</td></p>
+<p><td>
+525
+</td></p>
+</tr>
+<tr>
+<p><td>
+G
+</td></p>
+<p><td>
+550
+</td></p>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<h3 id="_21"><strong>ルール</strong><a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<section>
+<ol>
+<p><li>
+コンテスト中に問題に正解すると点数を獲得できます。
+</li></p>
+<p><li>
+順位は総合得点で決定します。
+</li></p>
+<p><li>
+同点の場合は提出時間の早い人が上の順位になります。
+</li></p>
+<p><li>
+誤答を提出するたびにペナルティが加算されます。このコンテストのペナルティは5分です。詳細は画面下部の「ルール」をご覧ください。
+</li></p>
+</ol>
+<p><p>
+このコンテストは full-feedback 形式のコンテストです。コンテスト中に提出された結果だけで順位が決定します。 
+</p></p>
+</section>
+<h3 id="_22"><strong>便利情報</strong><a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<ul>
+<p><li>
+<a href="https://atcoder.jp/">トップページ</a>
+</li></p>
+<p><li>
+<a href="https://atcoder.jp/post/37">参加方法</a>
+</li></p>
+<p><li>
+<a href="https://atcoder.jp/contests/practice">提出の練習ページ</a>
+</li></p>
+</ul>
+<p></span></p>
+<p></span></p>
+</div>
+</div>
+<div class="tabbed-block">
+<div>
+<p><span></p>
+<p><span></p>
+<div>
+<h3 id="sponsors"><strong>Sponsors</strong><a class="headerlink" href="#sponsors" title="Permanent link">&para;</a></h3>
+<div>
+<div>
+<div>
+<p><div>
+<a href="https://www.e-seikatsu.info/">
+<img src="https://img.atcoder.jp/abc308/e-seikatsu-420x150.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://www.mcdigital.jp/">
+<img src="https://img.atcoder.jp/abc358/MCD_logo.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://jobs.atcoder.jp/offers/list?f.CompanyScreenName=elysium">
+<img src="https://img.atcoder.jp/abc358/ELYSIUM_logo.jpg"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://jobs.st.inc/engineer">
+<img src="https://img.atcoder.jp/abc358/STORES_logo.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://www.forcia.com/jobs/">
+<img src="https://img.atcoder.jp/abc308/forcia-420x150.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://magicpod.com/">
+<img src="https://img.atcoder.jp/abc358/magicpod_logo2.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://corp.freee.co.jp/">
+<img src="https://img.atcoder.jp/abc308/freee-420x150.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+<div>
+<p><div>
+<a href="https://careers.mercari.com/jp/students/">
+<img src="https://img.atcoder.jp/abc358/mercari_logo.png"></p>
+<p></img>
+</a>
+</div></p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<hr />
+<h3 id="contest-information"><strong>Contest Information</strong><a class="headerlink" href="#contest-information" title="Permanent link">&para;</a></h3>
+<ul>
+<p><li>
+Duration: 100 minutes
+</li></p>
+<p><li>
+Rated Range: 0 - 
+<span>
+1999
+</span></p>
+</li>
+</ul>
+<h3 id="point-values"><strong>Point Values</strong><a class="headerlink" href="#point-values" title="Permanent link">&para;</a></h3>
+<div>
+<div>
+<table>
+<thead>
+<tr>
+<p><th>
+Task
+</th></p>
+<p><th>
+Score
+</th></p>
+</tr>
+</thead>
+<tbody>
+<tr>
+<p><td>
+A
+</td></p>
+<p><td>
+100
+</td></p>
+</tr>
+<tr>
+<p><td>
+B
+</td></p>
+<p><td>
+200
+</td></p>
+</tr>
+<tr>
+<p><td>
+C
+</td></p>
+<p><td>
+300
+</td></p>
+</tr>
+<tr>
+<p><td>
+D
+</td></p>
+<p><td>
+350
+</td></p>
+</tr>
+<tr>
+<p><td>
+E
+</td></p>
+<p><td>
+475
+</td></p>
+</tr>
+<tr>
+<p><td>
+F
+</td></p>
+<p><td>
+525
+</td></p>
+</tr>
+<tr>
+<p><td>
+G
+</td></p>
+<p><td>
+550
+</td></p>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h3 id="contest-rules"><strong>Contest Rules</strong><a class="headerlink" href="#contest-rules" title="Permanent link">&para;</a></h3>
+<p>This contest is full-feedback (solutions are judged during the contest). </p>
+<p>When
+            you solve a problem, you get a score assigned to it. Competitors are ranked first by total scores, then by
+            penalties. The penalties are computed as (the time you spend to get your current score) + (5 minutes) * (the
+            number of incorrect attempts). </p>
+<h3 id="useful-links"><strong>Useful Links</strong><a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h3>
+<ul>
+<p><li>
+<a href="https://atcoder.jp/">AtCoder top page</a>
+</li></p>
+<p><li>
+<a href="https://atcoder.jp/post/2">How to participate</a>
+</li></p>
+<p><li>
+<a href="https://atcoder.jp/contests/practice">Practice contest</a>
+</li></p>
+</ul>
+</div>
+<p></span></p>
+<p></span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://yifen9.github.io" target="_blank" rel="noopener" title="yifen9.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M192 32c0 17.7 14.3 32 32 32 123.7 0 224 100.3 224 224 0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32m0 96c0 17.7 14.3 32 32 32 70.7 0 128 57.3 128 128 0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192-17.7 0-32 14.3-32 32m-96 16c0-26.5-21.5-48-48-48S0 117.5 0 144v224c0 79.5 64.5 144 144 144s144-64.5 144-144-64.5-144-144-144h-16v96h16c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<yifeng.li@studenti.unitn.it>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9V320c0 28.4-10.8 57.7-22.3 80.8-6.5 13-13.9 25.8-22.5 37.6-3.2 4.3-4.1 9.9-2.3 15s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7.3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7-3.2-14.2-7.5-28.7-13.5-42v-24.6c0-30.2 10.2-58.7 27.9-81.5 12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5.8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1l280.6-101c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1c-7.6-2.7-15.6-4.1-23.7-4.1M128 408c0 35.3 86 72 192 72s192-36.7 192-72l-15.3-145.4L354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6l-142.2-51.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<yifen9@yandex.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M153.1 315.8 65.7 512H2l96-209.8c-45.1-22.9-75.2-64.4-75.2-141.1C22.7 53.7 90.8 0 171.7 0H254v512h-55.1V315.8zm45.8-269.3h-29.4c-44.4 0-87.4 29.4-87.4 114.6 0 82.3 39.4 108.8 87.4 108.8h29.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/yifen9" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/yifen9" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.tabs.link", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+      
+        <script src="../../../overrides/extra.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2345 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yifen9.github.io/algo-notes/atcoder/4_ahc_AtCoder_Heuristic_Contest/019/a_A_Silhouette_Block_Puzzle_Creation/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+    
+    
+      
+        <title>AHC019 > Silhouette Block Puzzle Creation - Algorithm Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../../overrides/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ahc019-silhouette-block-puzzle-creation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Algorithm Notes" class="md-header__button md-logo" aria-label="Algorithm Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Algorithm Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AHC019 &gt; Silhouette Block Puzzle Creation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yifen9/algo-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    algo-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../template/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Template
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AtCoder
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../aoj/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AOJ
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Algorithm Notes" class="md-nav__button md-logo" aria-label="Algorithm Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Algorithm Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yifen9/algo-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    algo-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Template
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Template
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../template/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../1_abc_AtCoder_Beginner_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Beginner Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Beginner Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../2_arc_AtCoder_Regular_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Regular Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Regular Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../3_agc_AtCoder_Grand_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Grand Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Grand Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Heuristic Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Heuristic Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../aoj/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AOJ
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            AOJ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../aoj/courses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Courses
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Courses
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../aoj/courses/2_ITP1_Introduction_to_Programming_I/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    2 Introduction to Programming I
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2 Introduction to Programming I
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solutions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      問題文
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="問題文">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      パズルのルールについての補足
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      シルエットについて
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      得点
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="得点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      テストケース数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      相対評価システムについて
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      実行時間について
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      入力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      出力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      サンプルプログラム
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      入力生成方法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="入力生成方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(D\)の生成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fr" class="md-nav__link">
+    <span class="md-ellipsis">
+      \(f,r\)の生成
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      ツール(入力ジェネレータ・ビジュアライザ)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      入力例 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      出力例 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem Statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-puzzle-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed puzzle rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#about-silhouette" class="md-nav__link">
+    <span class="md-ellipsis">
+      About silhouette
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoring
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-of-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number of test cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#about-relative-evaluation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      About relative evaluation system
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#about-execution-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      About execution time
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Solution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Generation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generation-of-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generation of \(D\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generation-of-fr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generation of \(f,r\)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-input-generator-and-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools (Input generator and visualizer)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-input-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Input 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Output 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ahc019-silhouette-block-puzzle-creation">AHC019 &gt; Silhouette Block Puzzle Creation<a class="headerlink" href="#ahc019-silhouette-block-puzzle-creation" title="Permanent link">&para;</a></h1>
+<p><small><a href="../">← Back</a></small></p>
+<h2 id="basic-info">Basic Info<a class="headerlink" href="#basic-info" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>ID:      </strong>a</li>
+<li><strong>Contest: </strong>019</li>
+<li><strong><a href="https://atcoder.jp/contests/ahc019/tasks/ahc019_a">Origin</a></strong></li>
+<li><strong><a href="https://download-directory.github.io/?url=https://github.com/yifen9/algo-notes/tree/main/src/atcoder/4_ahc_AtCoder_Heuristic_Contest/019/a_A_Silhouette_Block_Puzzle_Creation" download>Download</a></strong></li>
+</ul>
+<h2 id="solutions">Solutions<a class="headerlink" href="#solutions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Type</th>
+<th>Size</th>
+<th>Result</th>
+<th>Strategy</th>
+<th>Performance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="task-statement">Task Statement<a class="headerlink" href="#task-statement" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">日本語</label><label for="__tabbed_1_2">English</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div>
+<p><span></p>
+<p><span></p>
+<div>
+<section>
+<h3 id="_1"><strong>問題文</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><p>
+AtCoder社はブロックを組み合わせて指定されたシルエットの立体を作る知育玩具を開発している。
+この玩具は <span class="arithmatex">\(1\times 1\times 1\)</span>の立方体を面同士で接合したポリキューブ状のブロックが複数と2次元の白黒シルエット画像2枚の組がセットになっている。
+ブロックを組み合わせて一つの立体を作り、作った立体を正面から見た時のシルエットと、右側から見た時のシルエットが、シルエット画像に完全一致していたらゲームクリアである。
+</p></p>
+<p><p>
+長く遊べるように、1セットのブロックに対して、シルエットの組を複数用意したい。
+例えば左図の例にある6ブロックのセットからは、右図にあるようなシルエットの組2つが達成可能である。
+</p></p>
+<div>
+<div>
+<p><img src="https://img.atcoder.jp/ahc019/b36525d8_1.png"></p>
+<p></img></p>
+</div>
+<div>
+<p><img src="https://img.atcoder.jp/ahc019/b36525d8_2.png"></p>
+<p></img></p>
+</div>
+</div>
+<p><p>
+玩具デザイナーであるあなたの仕事は、正面・右側のシルエットのペアが2組与えられるので、両方を作ることが出来るようなブロックのセットと、その作り方を求めることである。
+小さなブロックは子供が誤って飲み込んでしまう可能性があるため、少数の大きなブロックのみからなるセットが望ましい。
+</p></p>
+<h4 id="_2"><strong>パズルのルールについての補足</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ul>
+<p><li>
+ブロックは全て使い切らなくても良い(が、全て使い切るほうが良いスコアが得られる)。
+</li></p>
+<p><li>
+各ブロックは <span class="arithmatex">\(x\)</span>軸、<span class="arithmatex">\(y\)</span>軸、<span class="arithmatex">\(z\)</span>軸に対して90度単位で回転させることが出来るが反転させることは出来ない。
+</li></p>
+<p><li>
+ブロックの配置は各頂点が整数座標となるようにしなくてはならず、ブロック同士は正の体積の共通部分を持ってはならない。
+</li></p>
+<p><li>
+作成する立体は連結でなくても良い。簡単のため、宙に浮かせるような配置も可能であるとする(追加で透明なブロックが大量にあり、自由に支えることが出来ると解釈せよ)。
+</li></p>
+</ul>
+<h4 id="_3"><strong>シルエットについて</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p><p>
+左から右方向に <span class="arithmatex">\(x\)</span>軸、手前から奥方向に <span class="arithmatex">\(y\)</span>軸、上から下方向に <span class="arithmatex">\(z\)</span>軸を取る。
+全てのブロックは <span class="arithmatex">\((0,0,0)\)</span>と <span class="arithmatex">\((D,D,D)\)</span>を対角とする立方体領域内に収まっているとする。
+三次元の01配列 <span class="arithmatex">\(b(x,y,z)\)</span>を、<span class="arithmatex">\((x,y,z)\)</span>と <span class="arithmatex">\((x+1,y+1,z+1)\)</span>を対角とする単位立方体の領域をブロックが占めている場合に <span class="arithmatex">\(b(x,y,z)=1\)</span>、そうでない場合に <span class="arithmatex">\(b(x,y,z)=0\)</span>と定義する。
+このとき、前から見たシルエットは二次元の01配列 <span class="arithmatex">\(f(z,x)\)</span>であり、以下のように定義される。
+</p></p>
+<p><p>
+[
+    f(z,x)=\begin{cases}
+    1&amp;(\sum_{y=0}^{D-1}b(x,y,z)\geq 1)\
+    0&amp;(\sum_{y=0}^{D-1}b(x,y,z)=0)
+    \end{cases}
+]
+</p></p>
+<p><p>
+同様に、右から見たシルエットは二次元の01配列 <span class="arithmatex">\(r(z,y)\)</span>であり、以下のように定義される。
+</p></p>
+<p><p>
+[
+    r(z,y)=\begin{cases}
+    1&amp;(\sum_{x=0}^{D-1}b(x,y,z)\geq 1)\
+    0&amp;(\sum_{x=0}^{D-1}b(x,y,z)=0)
+    \end{cases}
+]
+</p></p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="_4"><strong>得点</strong><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><p>
+作成した玩具セットに含まれる各ブロックの体積を <span class="arithmatex">\(v_1,\cdots,v_n\)</span>とする。
+ここで、ブロックの体積とはそれを構成する <span class="arithmatex">\(1\times 1\times 1\)</span>の立方体の個数に等しい。
+各ブロックは連結、すなわち構成するどの立方体同士も面を共有する立方体への移動によって到達可能でなければならない。
+非連結なブロックが一つでもある場合は 
+<span>
+WA
+</span>
+と判定される。
+各ブロックは連結でなければならないが、ブロックを組み合わせて作る立体は非連結でも構わないことに注意せよ。
+</p></p>
+<p><p>
+<span class="arithmatex">\(i=1,2\)</span>番目のシルエットの組に対して、出力した立体の作り方において使用しなかったブロックの体積の合計を <span class="arithmatex">\(r_i\)</span>、両方で使用したブロックの集合を <span class="arithmatex">\(S\)</span>とする。
+このとき、以下の評価値が得られる。評価値は低ければ低いほど良い。
+</p></p>
+<p><p>
+[
+    \mathrm{round}\left(10^9\times \left(r_1+r_2+\sum_{i\in S} \frac{1}{v_i}\right)\right)
+]
+</p></p>
+<p><p>
+例えば、ブロックのセットが体積5のブロックA、体積3のブロックB、体積2のブロックCからなり、AとBを用いて作成できる立体で1組目のシルエットを達成し、AとCを用いて作成出来る立体で2組目のシルエットを達成した場合、得られる評価値は <span class="arithmatex">\(\mathrm{round}\left(10^9\times \left(2+3+1/5\right)\right)\)</span>となる。
+</p></p>
+<p><p>
+各テストケース毎に、<span class="arithmatex">\(\mathrm{round}(10^9\times \frac{全参加者中の最小評価値}{自身の評価値})\)</span>の
+<font color="red">
+<strong>
+相対評価スコア
+</strong>
+</font>
+が得られ、その和が提出の得点となる。
+</p></p>
+<p><p>
+最終順位はコンテスト終了後に実施されるより多くの入力に対するシステムテストにおける得点で決定される。
+暫定テスト、システムテストともに、一部のテストケースで不正な出力や制限時間超過をした場合、そのテストケースの相対評価スコアは0点となり、そのテストケースにおいては「全参加者中の最小評価値」の計算から除外される。
+システムテストは
+<font color="red">
+<strong></p>
+<p><span>
+CE
+</span>
+以外の結果を得た一番最後の提出
+</strong>
+</font>
+に対してのみ行われるため、最終的に提出する解答を間違えないよう注意せよ。
+</p></p>
+<h4 id="_5"><strong>テストケース数</strong><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ul>
+<p><li>
+暫定テスト: 50個
+</li></p>
+<p><li>
+システムテスト: 2000個、コンテスト終了後に <a href="https://img.atcoder.jp/ahc019/seeds.txt">seeds.txt</a>(sha256=08db725cbdc37734a2e8fbe5bc0cbc1e95d7a68933b7f43dcdd0ffc3d2a95e34) を公開
+</li></p>
+<p><li>
+システムテストは与えられるシルエットの大きさが <span class="arithmatex">\(D=5,6,\cdots,14\)</span>であるような入力を <span class="arithmatex">\(200\)</span>個ずつ含む
+</li></p>
+<p><li>
+seed=0 の入力は手動で作成されたものであり、暫定テスト、システムテストには含まれない。
+</li></p>
+</ul>
+<h4 id="_6"><strong>相対評価システムについて</strong><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p><p>
+暫定テスト、システムテストともに、
+<span>
+CE
+</span>
+以外の結果を得た一番最後の提出のみが順位表に反映される。
+相対評価スコアの計算に用いられる各テストケース毎の全参加者中の最小評価値の算出においても、順位表に反映されている最終提出のみが用いられる。
+</p></p>
+<p><p>
+順位表に表示されているスコアは相対評価スコアであり、新規提出があるたびに、相対評価スコアが再計算される。
+一方、提出一覧から確認出来る各提出のスコアは各テストケース毎の評価値をそのまま足し合わせたものであり、相対評価スコアは表示されない。
+最新以外の提出の、現在の順位表における相対評価スコアを知るためには、再提出が必要である。
+不正な出力や制限時間超過をした場合、提出一覧から確認出来るスコアは0となるが、順位表には正解したテストケースに対する相対スコアの和が表示されている。
+</p></p>
+<h4 id="_7"><strong>実行時間について</strong><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p><p>
+実行時間には多少のブレが生じます。
+また、システムテストでは同時に大量の実行を行うため、暫定テストに比べて数%程度実行時間が伸びる現象が確認されています。
+そのため、実行時間制限ギリギリの提出がシステムテストで
+<span>
+TLE
+</span>
+となる可能性があります。
+プログラム内で時間を計測して処理を打ち切るか、実行時間に余裕を持たせるようお願いします。
+</p></p>
+</section>
+</div>
+<hr />
+<div>
+<div>
+<section>
+<h3 id="_8"><strong>入力</strong><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><p>
+入力は以下の形式で標準入力から与えられる。
+</p></p>
+<div>
+<p><span class="arithmatex">\(D\)</span><span class="arithmatex">\(f_1(0,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(f_1(0,D-1)\)</span><span class="arithmatex">\(\vdots\)</span><span class="arithmatex">\(f_1(D-1,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(f_1(D-1,D-1)\)</span><span class="arithmatex">\(r_1(0,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(r_1(0,D-1)\)</span><span class="arithmatex">\(\vdots\)</span><span class="arithmatex">\(r_1(D-1,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(r_1(D-1,D-1)\)</span><span class="arithmatex">\(f_2(0,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(f_2(0,D-1)\)</span><span class="arithmatex">\(\vdots\)</span><span class="arithmatex">\(f_2(D-1,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(f_2(D-1,D-1)\)</span><span class="arithmatex">\(r_2(0,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(r_2(0,D-1)\)</span><span class="arithmatex">\(\vdots\)</span><span class="arithmatex">\(r_2(D-1,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(r_2(D-1,D-1)\)</span>
+</div></p>
+<ul>
+<p><li>
+<span class="arithmatex">\(D\)</span>はシルエット画像の大きさを表し、各シルエット画像は <span class="arithmatex">\(D\times D\)</span>の正方形である。<span class="arithmatex">\(5\leq D\leq 14\)</span>を満たす。
+</li></p>
+<p><li>
+<span class="arithmatex">\(f_i,r_i\)</span>は <span class="arithmatex">\(i\)</span>番目のシルエット画像の組であり、<span class="arithmatex">\(f_i\)</span>が正面から見たシルエット、<span class="arithmatex">\(r_i\)</span>が右側から見たシルエットである。それぞれ <span class="arithmatex">\(D\times D\)</span>の 01 行列であり、長さ <span class="arithmatex">\(D\)</span>の01文字列 <span class="arithmatex">\(D\)</span>個として与えられる。値の意味については先の「シルエットについて」の項目を参照せよ。
+</li></p>
+<p><li>
+各シルエットについて、全ての1の要素は1つの連結成分をなす。
+</li></p>
+<p><li>
+<span class="arithmatex">\(z=0,\cdots,D-1\)</span>に対して、<span class="arithmatex">\(f_i(z,0)+\cdots+f_i(z,D-1)\geq 1\)</span>、<span class="arithmatex">\(r_i(z,0)+\cdots+r_i(z,D-1)\geq 1\)</span>を満たす。この条件により、指定されたシルエットの組と合致する立体が必ず存在することが保証される。
+</li></p>
+</ul>
+</section>
+</div>
+<div>
+<section>
+<h3 id="_9"><strong>出力</strong><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><p>
+ブロックの総数を <span class="arithmatex">\(n\)</span>とする。
+<span class="arithmatex">\(i\)</span>番目のシルエットの組に対応するブロックの組み方を、<span class="arithmatex">\(D\times D\times D\)</span>の三次元配列 <span class="arithmatex">\(b_i(x,y,z)\)</span>を用いて以下のように表現する。
+</p></p>
+<p><p>
+<span class="arithmatex">\((x,y,z)\)</span>と <span class="arithmatex">\((x+1,y+1,z+1)\)</span>を対角とする単位立方体の領域を <span class="arithmatex">\(k (1\leq k\leq n)\)</span>番のブロックが占めている場合に <span class="arithmatex">\(b_i(x,y,z)=k\)</span>、どのブロックもその領域を占めていない場合に <span class="arithmatex">\(b(x,y,z)=0\)</span>。
+</p></p>
+<p><p>
+ブロックは変形できないため、各 <span class="arithmatex">\(i=1,2\)</span>について、同じ番号が振られたブロックは同じ形状、すなわち、回転と平行移動によって完全に一致させることが出来なければならない。
+</p></p>
+<p><p>
+このとき、以下の形式で標準出力に出力せよ。
+</p></p>
+<div>
+<p><span class="arithmatex">\(n\)</span><span class="arithmatex">\(b_1(0,0,0)\)</span><span class="arithmatex">\(b_1(0,0,1)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(b_1(D-1,D-1,D-1)\)</span><span class="arithmatex">\(b_2(0,0,0)\)</span><span class="arithmatex">\(b_2(0,0,1)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(b_2(D-1,D-1,D-1)\)</span>
+</div></p>
+<p><p>
+ここで、<span class="arithmatex">\(b_i\)</span>の出力の <span class="arithmatex">\(x\times D^2+y\times D+z\)</span>個目が <span class="arithmatex">\(b_i(x,y,z)\)</span>である。
+各 <span class="arithmatex">\(i=1,\cdots,n\)</span>に対して、<span class="arithmatex">\(i\)</span>番のブロックは <span class="arithmatex">\(b_1\)</span>もしくは <span class="arithmatex">\(b_2\)</span>の少なくとも一方では使われていなければならない。どちらでも使われていないブロックが存在する場合、
+<span>
+WA
+</span>
+と判定される。
+</p></p>
+<p><p>
+<a href="https://img.atcoder.jp/ahc019/b36525d8.html?lang=ja&seed=0&output=19%0D%0A0+1+2+3+0+4+5+0+3+3+6+0+0+0+3+7+7+0+3+3+0+7+0+8+0+0+5+9+0+0+0+5+0+0+0+0+0+0+0+0+0+0+0+0+0+0+7+0+0+0+0+0+9+10+0+0+0+0+10+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+9+9+0+0+0+9+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+11+12+12+0+13+0+0+12+14+0+0+0+0+14+0+0+0+14+14+0+0+0+14+0%0D%0A15+0+0+0+3+14+0+0+0+3+0+0+0+0+9+16+0+0+9+9+0+0+0+17+0+0+0+0+0+0+14+0+10+0+3+14+0+10+0+9+0+0+0+18+0+0+0+0+0+0+0+0+0+0+3+0+0+12+0+3+14+0+12+0+9+0+0+0+0+0+0+0+0+0+0+0+0+0+0+3+0+0+12+0+0+14+0+7+0+0+0+7+7+0+5+0+19+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+5+0+7+0+0+5+0+0+0+0+0%0D%0A">例を見る</a>
+</p></p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="_10"><strong>サンプルプログラム</strong><a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>
+</p>
+<p><details>
+Pythonでの解答例を示す。
+このプログラムでは、<span class="arithmatex">\(f(z,x)=1\)</span>かつ <span class="arithmatex">\(r(z,y)=1\)</span>であるような全ての <span class="arithmatex">\((x,y,z)\)</span>に対して、<span class="arithmatex">\(1\times 1\times 1\)</span>のブロックを敷き詰めることで目的のシルエットを達成している。
+<p></p>
+</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>D = int(input())
+<span class="linenos" data-linenos=" 2 "></span>f = [[] for i in range(2)]
+<span class="linenos" data-linenos=" 3 "></span>r = [[] for i in range(2)]
+<span class="linenos" data-linenos=" 4 "></span>for i in range(2):
+<span class="linenos" data-linenos=" 5 "></span>    for k in range(D):
+<span class="linenos" data-linenos=" 6 "></span>        f[i].append(input())
+<span class="linenos" data-linenos=" 7 "></span>    for k in range(D):
+<span class="linenos" data-linenos=" 8 "></span>        r[i].append(input())
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>b = [[0 for j in range(D * D * D)] for i in range(2)]
+<span class="linenos" data-linenos="11 "></span>n = 0
+<span class="linenos" data-linenos="12 "></span>for i in range(2):
+<span class="linenos" data-linenos="13 "></span>    for x in range(D):
+<span class="linenos" data-linenos="14 "></span>        for y in range(D):
+<span class="linenos" data-linenos="15 "></span>            for z in range(D):
+<span class="linenos" data-linenos="16 "></span>                if f[i][z][x] == &#39;1&#39; and r[i][z][y] == &#39;1&#39;:
+<span class="linenos" data-linenos="17 "></span>                    n += 1
+<span class="linenos" data-linenos="18 "></span>                    b[i][x * D * D + y * D + z] = n
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span>print(n)
+<span class="linenos" data-linenos="21 "></span>print(&#39; &#39;.join(map(str, b[0])))
+<span class="linenos" data-linenos="22 "></span>print(&#39; &#39;.join(map(str, b[1])))
+</code></pre></div>
+</details>
+</section>
+</div>
+<div>
+<section>
+<h3 id="_11"><strong>入力生成方法</strong><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>
+</p>
+<p><details>
+<span class="arithmatex">\(L\)</span>以上 <span class="arithmatex">\(U\)</span>以下の整数値を一様ランダムに生成する関数を <span class="arithmatex">\(\mathrm{randint}(L,U)\)</span>で表す。
+<span class="arithmatex">\(L\)</span>以上 <span class="arithmatex">\(U\)</span>未満の浮動小数値を一様ランダムに生成する関数を <span class="arithmatex">\(\mathrm{randdouble}(L,U)\)</span>で表す。
+<p></p>
+</p>
+<h4 id="d"><strong><span class="arithmatex">\(D\)</span>の生成</strong><a class="headerlink" href="#d" title="Permanent link">&para;</a></h4>
+<p><p>
+<span class="arithmatex">\(D=\mathrm{randint}(5,14)\)</span>により生成する。
+</p></p>
+<h4 id="fr"><strong><span class="arithmatex">\(f,r\)</span>の生成</strong><a class="headerlink" href="#fr" title="Permanent link">&para;</a></h4>
+<p><p>
+まずはじめに、生成されるシルエットの特徴を決める数値を以下のように生成する。
+</p></p>
+<ul>
+<p><li>
+<span class="arithmatex">\(p(0)=0\)</span>
+</li></p>
+<p><li>
+<span class="arithmatex">\(p(1)=D^{\mathrm{randdouble}(-1,1)}\)</span>
+</li></p>
+<p><li>
+<span class="arithmatex">\(p(2)=D^{\mathrm{randdouble}(-1,1)}\)</span>
+</li></p>
+<p><li>
+<span class="arithmatex">\(p(3)=D^{\mathrm{randdouble}(-0.5,1.5)}\)</span>
+</li></p>
+<p><li>
+<span class="arithmatex">\(p(4)=D^{\mathrm{randdouble}(-0.5,1.5)}\)</span>
+</li></p>
+</ul>
+<p><p>
+次に、各 <span class="arithmatex">\(f_1,r_1,f_2,r_2\)</span>を以下のように生成する。
+</p></p>
+<p><p>
+生成するシルエット配列を <span class="arithmatex">\(g\)</span>とし、全ての <span class="arithmatex">\((z,x)\)</span>について、<span class="arithmatex">\(g(z,x)=0\)</span>と初期化する。
+<span class="arithmatex">\(1\)</span>の個数を表す値 <span class="arithmatex">\(m=\mathrm{randint}(2D,\lfloor D^2/2\rfloor)\)</span>を生成する。
+<span class="arithmatex">\(z=\mathrm{randint}(0,D-1)\)</span>と <span class="arithmatex">\(x=\mathrm{randint}(0,D-1)\)</span>を生成し、<span class="arithmatex">\(g(z,x)=1\)</span>とする。
+<span class="arithmatex">\(1\)</span>の個数が <span class="arithmatex">\(m\)</span>になるまで、以下の処理を繰り返す。
+</p></p>
+<p><p>
+各 <span class="arithmatex">\((z,x)\)</span>について、4方向に隣接する 1 の値の個数を <span class="arithmatex">\(d(z,x)\)</span>とする。
+<span class="arithmatex">\(g(z,x)=0\)</span>であるような <span class="arithmatex">\((z,x)\)</span>を <span class="arithmatex">\(p(d(z,x))\)</span>に比例する確率で一つ選び、<span class="arithmatex">\(g(z,x)=1\)</span>に更新する。
+</p></p>
+<p><p>
+<span class="arithmatex">\(1\)</span>の個数が <span class="arithmatex">\(m\)</span>となったとき、全ての <span class="arithmatex">\(z=0,\cdots,D-1\)</span>について、<span class="arithmatex">\(\sum_{x=0}^{D-1}g(z,x)\geq 1\)</span>であるかをチェックし、成り立っていない場合は <span class="arithmatex">\(g\)</span>を<span class="arithmatex">\(0\)</span>に再度初期化して <span class="arithmatex">\(m\)</span>を生成する処理からやり直す。</p>
+</p>
+</details>
+<p>
+</p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="_12"><strong>ツール(入力ジェネレータ・ビジュアライザ)</strong><a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<p><li>
+<a href="https://img.atcoder.jp/ahc019/b36525d8.html?lang=ja">Web版</a>: 3D表示が可能です。
+</li></p>
+<p><li>
+<a href="https://img.atcoder.jp/ahc019/b36525d8.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。
+<ul></p>
+<p><li>
+<a href="https://img.atcoder.jp/ahc019/b36525d8_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。
+</li></p>
+</ul>
+</li>
+</ul>
+<p>
+<p><font color="red">コンテスト期間中に、seed=0 に対するビジュアライザの出力画像(PNG)のみ twitter で共有が可能です。
+</font>
+必ず指定されたハッシュタグを用い、公開アカウントを使用して下さい。共有出来るのはseed=0に対するビジュアライズ結果と点数のみで、動画や出力文字列、他のシードでの点数の共有や、解法・考察に関する言及は禁止です。
+</p></p>
+<p><p>
+<a href="https://twitter.com/search?q=%23AHC019%20%23visualizer&src=typed_query&f=live">共有された画像の一覧</a>
+</p></p>
+</section>
+</div>
+</div>
+<hr />
+<div>
+<section>
+<h3 id="1"><strong>入力例 1</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div>
+<p>5
+10001
+11011
+11111
+10101
+10001
+01110
+11011
+10000
+11011
+01110
+11110
+00011
+01110
+11000
+11111
+11110
+00011
+01110
+00011
+11110</p>
+</div>
+</section>
+</div>
+<div>
+<section>
+<h3 id="1_1"><strong>出力例 1</strong><a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<div>
+<p>19
+0 1 2 3 0 4 5 0 3 3 6 0 0 0 3 7 7 0 3 3 0 7 0 8 0 0 5 9 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 0 0 0 9 10 0 0 0 0 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 9 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 12 12 0 13 0 0 12 14 0 0 0 0 14 0 0 0 14 14 0 0 0 14 0
+15 0 0 0 3 14 0 0 0 3 0 0 0 0 9 16 0 0 9 9 0 0 0 17 0 0 0 0 0 0 14 0 10 0 3 14 0 10 0 9 0 0 0 18 0 0 0 0 0 0 0 0 0 0 3 0 0 12 0 3 14 0 12 0 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 12 0 0 14 0 7 0 0 0 7 7 0 5 0 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 7 0 0 5 0 0 0 0 0</p>
+</div>
+</section>
+</div>
+<p></span></p>
+<p></span></p>
+</div>
+</div>
+<div class="tabbed-block">
+<div>
+<p><span></p>
+<p><span></p>
+<div>
+<section>
+<h3 id="problem-statement"><strong>Problem Statement</strong><a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h3>
+<p><p>
+AtCoder is developing an educational toy that combines blocks to create a three-dimensional object with a specified silhouette.
+The toy consists of a set of polycube-shaped blocks consisting of <span class="arithmatex">\(1\times 1\times 1\)</span>cubes joined face to face and a pair of two 2D monochrome silhouette images.
+You will win the game if you can construct a single 3D object by combining the blocks, so that the two silhouettes of the created object, viewed from the front and from the right side, completely match the given silhouette images.
+</p></p>
+<p><p>
+In order to allow children to play for a long time, we want to prepare multiple pairs of silhouettes for a single set of blocks.
+For example, the set of 6 blocks shown on the left figure can be used to create two pairs of silhouettes, as shown on the right.
+</p></p>
+<div>
+<div>
+<p><img src="https://img.atcoder.jp/ahc019/b36525d8_1.png"></p>
+<p></img></p>
+</div>
+<div>
+<p><img src="https://img.atcoder.jp/ahc019/b36525d8_2.png"></p>
+<p></img></p>
+</div>
+</div>
+<p><p>
+As a toy designer, you are given two pairs of front/right silhouettes, and your task is to find a set of blocks from which you can construct two objects having the given pairs of silhouettes, and a way to construct them.
+Because children may accidentally swallow small blocks, sets of blocks consisting only of a small number of large blocks are preferable.
+</p></p>
+<h4 id="detailed-puzzle-rules"><strong>Detailed puzzle rules</strong><a class="headerlink" href="#detailed-puzzle-rules" title="Permanent link">&para;</a></h4>
+<ul>
+<p><li>
+You don't have to use all the blocks (but you will get a better score if you do).
+</li></p>
+<p><li>
+Each block can be rotated by 90 degrees around the x-axis, y-axis, and z-axis, but cannot be flipped.
+</li></p>
+<p><li>
+The blocks must be arranged so that each vertex has integer coordinates, and different blocks must not have a positive common volume.
+</li></p>
+<p><li>
+The constructed object do not have to be connected. For the sake of simplicity, we assume that a floating arrangement is also possible (you may interpret this as there are a large number of additional transparent blocks, which can be used to support blocks).
+</li></p>
+</ul>
+<h4 id="about-silhouette"><strong>About silhouette</strong><a class="headerlink" href="#about-silhouette" title="Permanent link">&para;</a></h4>
+<p><p>
+Take the x-axis from left to right, the y-axis from front to back, and the z-axis from top to bottom.
+We assume that all blocks are within a cubic region that has <span class="arithmatex">\((0,0,0)\)</span>and <span class="arithmatex">\((D,D,D)\)</span>as diagonal corners.
+We define a three-dimensional 01-array <span class="arithmatex">\(b(x,y,z)\)</span>as <span class="arithmatex">\(b(x,y,z)=1\)</span>if some block occupies the cubic region that has <span class="arithmatex">\((x,y,z)\)</span>and <span class="arithmatex">\((x+1,y+1,z+1)\)</span>as diagonal corners, and <span class="arithmatex">\(b(x,y,z)=0\)</span>otherwise.
+Then, the silhouette viewed from the front is a two-dimensional 01-array <span class="arithmatex">\(f(z,x)\)</span>defined as follows.
+</p></p>
+<p><p>
+[
+    f(z,x)=\begin{cases}
+    1&amp;(\sum_{y=0}^{D-1}b(x,y,z)\geq 1)\
+    0&amp;(\sum_{y=0}^{D-1}b(x,y,z)=0)
+    \end{cases}
+]
+</p></p>
+<p><p>
+Similarly, the silhouette viewed from the right is a two-dimensional 01-array <span class="arithmatex">\(r(z,y)\)</span>, defined as follows
+</p></p>
+<p><p>
+[
+    r(z,y)=\begin{cases}
+    1&amp;(\sum_{x=0}^{D-1}b(x,y,z)\geq 1)\
+    0&amp;(\sum_{x=0}^{D-1}b(x,y,z)=0)
+    \end{cases}
+]
+</p></p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="scoring"><strong>Scoring</strong><a class="headerlink" href="#scoring" title="Permanent link">&para;</a></h3>
+<p><p>
+Let <span class="arithmatex">\(v_1,\cdots,v_n\)</span>be the volume of each block in the created toy set.
+Here, the volume of a block is equal to the number of <span class="arithmatex">\(1\times 1\times 1\)</span>cubes it comprises.
+Each block must be connected, i.e., every cube it comprises must be reachable by moving through shared faces.
+If there is a disconnected block, it will be judged as 
+<span>
+WA
+</span>
+.
+Note that the 3D object created by combining the blocks can be disconnected.
+</p></p>
+<p><p>
+For the <span class="arithmatex">\(i\)</span>-th pair of silhouettes (<span class="arithmatex">\(i=1,2\)</span>), let <span class="arithmatex">\(r_i\)</span>be the sum of the volumes of the blocks that were not used in the output 3D object.
+Let <span class="arithmatex">\(S\)</span>be the set of blocks that were used in both two objects.
+Then you get the following evaluation value.
+The lower the evaluation value, the better.
+</p></p>
+<p><p>
+[
+    \mathrm{round}\left(10^9\times \left(r_1+r_2+\sum_{i\in S} \frac{1}{v_i}\right)\right)
+]
+</p></p>
+<p><p>
+For example, if the set of blocks consists of block A with volume 5, block B with volume 3, and block C with volume 2, and if the first set of silhouettes is achieved by a 3D object that can be created using A and B and the second set of silhouettes is achieved by a 3D object that can be created using A and C, the resulting evaluation value is <span class="arithmatex">\(\mathrm{round}\left(10^9\times \left(2+3+1/5\right)\right)\)</span>.
+</p></p>
+<p><p>
+For each test case, we compute the 
+<font color="red">
+<strong>
+relative score
+</strong>
+</font>
+<span class="arithmatex">\(\mathrm{round}(10^9\times \frac{\mathrm{MIN}}{\mathrm{YOUR}})\)</span>, where YOUR is your evaluation value and MIN is the lowest evaluation value among all competitors obtained on that test case. The score of the submission is the sum of the relative scores.
+</p></p>
+<p><p>
+The final ranking will be determined by the system test with more inputs which will be run after the contest is over.
+In both the provisional/system test, if your submission produces illegal output or exceeds the time limit for some test cases, only the score for those test cases will be zero, and your submission will be excluded from the MIN calculation for those test cases.
+</p></p>
+<p><p>
+The system test will be performed only for 
+<font color="red">
+<strong>
+the last submission which received a result other than 
+<span>
+CE
+</span></p>
+<p></strong>
+</font>
+.
+Be careful not to make a mistake in the final submission.
+</p></p>
+<h4 id="number-of-test-cases"><strong>Number of test cases</strong><a class="headerlink" href="#number-of-test-cases" title="Permanent link">&para;</a></h4>
+<ul>
+<p><li>
+Provisional test: 50
+</li></p>
+<p><li>
+System test: 2000. We will publish <a href="https://img.atcoder.jp/ahc019/seeds.txt">seeds.txt</a>(sha256=08db725cbdc37734a2e8fbe5bc0cbc1e95d7a68933b7f43dcdd0ffc3d2a95e34) after the contest is over.
+</li></p>
+<p><li>
+The system test contains <span class="arithmatex">\(200\)</span>inputs for each <span class="arithmatex">\(D=5,6,\cdots,14\)</span>, where <span class="arithmatex">\(D\)</span>is the size of each silhouette.
+</li></p>
+<p><li>
+The input for seed=0 is manually created and is not included in the provisional or system test.
+</li></p>
+</ul>
+<h4 id="about-relative-evaluation-system"><strong>About relative evaluation system</strong><a class="headerlink" href="#about-relative-evaluation-system" title="Permanent link">&para;</a></h4>
+<p><p>
+In both the provisional/system test, the standings will be calculated using only the last submission which received a result other than 
+<span>
+CE
+</span>
+.
+Only the last submissions are used to calculate the MIN for each test case when calculating the relative scores.
+</p></p>
+<p><p>
+The scores shown in the standings are relative, and whenever a new submission arrives, all relative scores are recalculated.
+On the other hand, the score for each submission shown on the submissions page is the sum of the evaluation value for each test case, and the relative scores are not shown.
+In order to know the relative score of submission other than the latest one in the current standings, you need to resubmit it.
+If your submission produces illegal output or exceeds the time limit for some test cases, the score shown on the submissions page will be 0, but the standings show the sum of the relative scores for the test cases that were answered correctly.
+</p></p>
+<h4 id="about-execution-time"><strong>About execution time</strong><a class="headerlink" href="#about-execution-time" title="Permanent link">&para;</a></h4>
+<p><p>
+Execution time may vary slightly from run to run.
+In addition, since system tests simultaneously perform a large number of executions, it has been observed that execution time increases by several percent compared to provisional tests.
+For these reasons, submissions that are very close to the time limit may result in 
+<span>
+TLE
+</span>
+in the system test.
+Please measure the execution time in your program to terminate the process, or have enough margin in the execution time.
+</p></p>
+</section>
+</div>
+<hr />
+<div>
+<div>
+<section>
+<h3 id="input"><strong>Input</strong><a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
+<p><p>
+Input is given from Standard Input in the following format:
+</p></p>
+<div>
+<p><span class="arithmatex">\(D\)</span><span class="arithmatex">\(f_1(0,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(f_1(0,D-1)\)</span><span class="arithmatex">\(\vdots\)</span><span class="arithmatex">\(f_1(D-1,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(f_1(D-1,D-1)\)</span><span class="arithmatex">\(r_1(0,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(r_1(0,D-1)\)</span><span class="arithmatex">\(\vdots\)</span><span class="arithmatex">\(r_1(D-1,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(r_1(D-1,D-1)\)</span><span class="arithmatex">\(f_2(0,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(f_2(0,D-1)\)</span><span class="arithmatex">\(\vdots\)</span><span class="arithmatex">\(f_2(D-1,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(f_2(D-1,D-1)\)</span><span class="arithmatex">\(r_2(0,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(r_2(0,D-1)\)</span><span class="arithmatex">\(\vdots\)</span><span class="arithmatex">\(r_2(D-1,0)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(r_2(D-1,D-1)\)</span>
+</div></p>
+<ul>
+<p><li>
+<span class="arithmatex">\(D\)</span>is the size of the silhouette image and satisfies <span class="arithmatex">\(5\leq D\leq 14\)</span>.
+</li></p>
+<p><li>
+<span class="arithmatex">\(f_i,r_i\)</span>are the <span class="arithmatex">\(i\)</span>-th silhouette image pair, where <span class="arithmatex">\(f_i\)</span>is the silhouette viewed from the front and <span class="arithmatex">\(r_i\)</span>is the silhouette viewed from the right. Each of them is 01 matrix of size <span class="arithmatex">\(D\times D\)</span>and is given as <span class="arithmatex">\(D\)</span>01 strings of length <span class="arithmatex">\(D\)</span>. For the meaning of these values, see the previous section "About silhouette".
+</li></p>
+<p><li>
+For each silhouette, all 1 elements form one connected component.
+</li></p>
+<p><li>
+For <span class="arithmatex">\(z=0,\cdots,D-1\)</span>, it holds that <span class="arithmatex">\(f_i(z,0)+\cdots+f_i(z,D-1)\geq 1\)</span>and <span class="arithmatex">\(r_i(z,0)+\cdots+r_i(z,D-1)\geq 1\)</span>. This condition guarantees that there always exists a 3D object that matches the specified pair of silhouettes.
+</li></p>
+</ul>
+</section>
+</div>
+<div>
+<section>
+<h3 id="output"><strong>Output</strong><a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<p><p>
+Let <span class="arithmatex">\(n\)</span>be the total number of blocks.
+The block arrangement corresponding to the <span class="arithmatex">\(i\)</span>-th pair of silhouettes is expressed as follows using a three-dimensional array <span class="arithmatex">\(b_i(x,y,z)\)</span>of size <span class="arithmatex">\(D\times D\times D\)</span>.
+</p></p>
+<p><p>
+<span class="arithmatex">\(b_i(x,y,z)=k\)</span>if the <span class="arithmatex">\(k (1\leq k\leq n)\)</span>-th block occupies the cubic region that has <span class="arithmatex">\((x,y,z)\)</span>and <span class="arithmatex">\((x+1,y+1,z+1)\)</span>as diagonal corners, and <span class="arithmatex">\(b(x,y,z)=0\)</span>if none of the blocks occupy that region.
+</p></p>
+<p><p>
+Since blocks cannot be reshaped, the same numbered blocks appearing in both <span class="arithmatex">\(i=1,2\)</span>must have the same shape, i.e., they must be able to be perfectly matched by rotation and translation.
+</p></p>
+<p><p>
+Then, output to Standard Output in the following format.
+</p></p>
+<div>
+<p><span class="arithmatex">\(n\)</span><span class="arithmatex">\(b_1(0,0,0)\)</span><span class="arithmatex">\(b_1(0,0,1)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(b_1(D-1,D-1,D-1)\)</span><span class="arithmatex">\(b_2(0,0,0)\)</span><span class="arithmatex">\(b_2(0,0,1)\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(b_2(D-1,D-1,D-1)\)</span>
+</div></p>
+<p><p>
+Here, the <span class="arithmatex">\((x\times D^2+y\times D+z)\)</span>-th output for <span class="arithmatex">\(b_i\)</span>is <span class="arithmatex">\(b_i(x,y,z)\)</span>.
+For each <span class="arithmatex">\(i=1,\cdots,n\)</span>, the <span class="arithmatex">\(i\)</span>-th block must be used in at least one of <span class="arithmatex">\(b_1\)</span>or <span class="arithmatex">\(b_2\)</span>. If there is a block that is not used in either, it is judged as 
+<span>
+WA
+</span>
+.
+</p></p>
+<p><p>
+<a href="https://img.atcoder.jp/ahc019/b36525d8.html?lang=en&seed=0&output=19%0D%0A0+1+2+3+0+4+5+0+3+3+6+0+0+0+3+7+7+0+3+3+0+7+0+8+0+0+5+9+0+0+0+5+0+0+0+0+0+0+0+0+0+0+0+0+0+0+7+0+0+0+0+0+9+10+0+0+0+0+10+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+9+9+0+0+0+9+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+11+12+12+0+13+0+0+12+14+0+0+0+0+14+0+0+0+14+14+0+0+0+14+0%0D%0A15+0+0+0+3+14+0+0+0+3+0+0+0+0+9+16+0+0+9+9+0+0+0+17+0+0+0+0+0+0+14+0+10+0+3+14+0+10+0+9+0+0+0+18+0+0+0+0+0+0+0+0+0+0+3+0+0+12+0+3+14+0+12+0+9+0+0+0+0+0+0+0+0+0+0+0+0+0+0+3+0+0+12+0+0+14+0+7+0+0+0+7+7+0+5+0+19+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+5+0+7+0+0+5+0+0+0+0+0%0D%0A">Show example</a>
+</p></p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="sample-solution"><strong>Sample Solution</strong><a class="headerlink" href="#sample-solution" title="Permanent link">&para;</a></h3>
+<p>
+</p>
+<p><details>
+This is a sample solution in Python.
+In this program, the target silhouette is achieved by placing a unit block of size <span class="arithmatex">\(1\times 1\times 1\)</span>for all <span class="arithmatex">\((x,y,z)\)</span>such that <span class="arithmatex">\(f(z,x)=1\)</span>and <span class="arithmatex">\(r(z,y)=1\)</span>.
+<p></p>
+</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>D = int(input())
+<span class="linenos" data-linenos=" 2 "></span>f = [[] for i in range(2)]
+<span class="linenos" data-linenos=" 3 "></span>r = [[] for i in range(2)]
+<span class="linenos" data-linenos=" 4 "></span>for i in range(2):
+<span class="linenos" data-linenos=" 5 "></span>    for k in range(D):
+<span class="linenos" data-linenos=" 6 "></span>        f[i].append(input())
+<span class="linenos" data-linenos=" 7 "></span>    for k in range(D):
+<span class="linenos" data-linenos=" 8 "></span>        r[i].append(input())
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>b = [[0 for j in range(D * D * D)] for i in range(2)]
+<span class="linenos" data-linenos="11 "></span>n = 0
+<span class="linenos" data-linenos="12 "></span>for i in range(2):
+<span class="linenos" data-linenos="13 "></span>    for x in range(D):
+<span class="linenos" data-linenos="14 "></span>        for y in range(D):
+<span class="linenos" data-linenos="15 "></span>            for z in range(D):
+<span class="linenos" data-linenos="16 "></span>                if f[i][z][x] == &#39;1&#39; and r[i][z][y] == &#39;1&#39;:
+<span class="linenos" data-linenos="17 "></span>                    n += 1
+<span class="linenos" data-linenos="18 "></span>                    b[i][x * D * D + y * D + z] = n
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span>print(n)
+<span class="linenos" data-linenos="21 "></span>print(&#39; &#39;.join(map(str, b[0])))
+<span class="linenos" data-linenos="22 "></span>print(&#39; &#39;.join(map(str, b[1])))
+</code></pre></div>
+</details>
+</section>
+</div>
+<div>
+<section>
+<h3 id="input-generation"><strong>Input Generation</strong><a class="headerlink" href="#input-generation" title="Permanent link">&para;</a></h3>
+<p>
+</p>
+<p><details>
+Let <span class="arithmatex">\(\mathrm{randint}(L,U)\)</span>be a function that generates a uniform random integer between <span class="arithmatex">\(L\)</span>and <span class="arithmatex">\(U\)</span>, inclusive.
+Let <span class="arithmatex">\(\mathrm{randdouble}(L,U)\)</span>be a function that generates a uniform random floating-point number at least <span class="arithmatex">\(L\)</span>and less than <span class="arithmatex">\(U\)</span>.
+<p></p>
+</p>
+<h4 id="generation-of-d"><strong>Generation of <span class="arithmatex">\(D\)</span></strong><a class="headerlink" href="#generation-of-d" title="Permanent link">&para;</a></h4>
+<p><p>
+We generate <span class="arithmatex">\(D\)</span>by <span class="arithmatex">\(D=\mathrm{randint}(5,14)\)</span>.
+</p></p>
+<h4 id="generation-of-fr"><strong>Generation of <span class="arithmatex">\(f,r\)</span></strong><a class="headerlink" href="#generation-of-fr" title="Permanent link">&para;</a></h4>
+<p><p>
+First, we generate the following values which determine the characteristics of the silhouettes to be generated.
+</p></p>
+<ul>
+<p><li>
+<span class="arithmatex">\(p(0)=0\)</span>
+</li></p>
+<p><li>
+<span class="arithmatex">\(p(1)=D^{\mathrm{randdouble}(-1,1)}\)</span>
+</li></p>
+<p><li>
+<span class="arithmatex">\(p(2)=D^{\mathrm{randdouble}(-1,1)}\)</span>
+</li></p>
+<p><li>
+<span class="arithmatex">\(p(3)=D^{\mathrm{randdouble}(-0.5,1.5)}\)</span>
+</li></p>
+<p><li>
+<span class="arithmatex">\(p(4)=D^{\mathrm{randdouble}(-0.5,1.5)}\)</span>
+</li></p>
+</ul>
+<p><p>
+Next, we generate each <span class="arithmatex">\(f_1,r_1,f_2,r_2\)</span>as follows.
+</p></p>
+<p><p>
+Let <span class="arithmatex">\(g\)</span>be the silhouette array to be generated and initialize it with <span class="arithmatex">\(g(z,x)=0\)</span>for all <span class="arithmatex">\((z,x)\)</span>.
+Generate a value <span class="arithmatex">\(m=\mathrm{randint}(2D,\lfloor D^2/2\rfloor)\)</span>representing the number of <span class="arithmatex">\(1\)</span>.
+Generate <span class="arithmatex">\(z=\mathrm{randint}(0,D-1)\)</span>and <span class="arithmatex">\(x=\mathrm{randint}(0,D-1)\)</span>, and then set <span class="arithmatex">\(g(z,x)=1\)</span>.
+Repeat the following process until the number of <span class="arithmatex">\(1\)</span>becomes <span class="arithmatex">\(m\)</span>.
+</p></p>
+<p><p>
+For each <span class="arithmatex">\((z,x)\)</span>, let <span class="arithmatex">\(d(z,x)\)</span>be the number of adjacent <span class="arithmatex">\(1\)</span>in the four directions.
+Choose <span class="arithmatex">\((z,x)\)</span>such that <span class="arithmatex">\(g(z,x)=0\)</span>with probability proportional to <span class="arithmatex">\(p(d(z,x))\)</span>and update <span class="arithmatex">\(g(z,x)=1\)</span>.
+</p></p>
+<p><p>
+When the number of <span class="arithmatex">\(1\)</span>becomes <span class="arithmatex">\(m\)</span>, check whether <span class="arithmatex">\(\sum_{x=0}^{D-1}g(z,x)\geq 1\)</span>for all <span class="arithmatex">\(z=0,\cdots,D-1\)</span>, and if not, reinitialize <span class="arithmatex">\(g\)</span>to <span class="arithmatex">\(0\)</span>and retry the process from generating <span class="arithmatex">\(m\)</span>.
+</p></p>
+</details>
+</section>
+</div>
+<div>
+<section>
+<h3 id="tools-input-generator-and-visualizer"><strong>Tools (Input generator and visualizer)</strong><a class="headerlink" href="#tools-input-generator-and-visualizer" title="Permanent link">&para;</a></h3>
+<ul>
+<p><li>
+<a href="https://img.atcoder.jp/ahc019/b36525d8.html?lang=en">Web version</a>: You can see 3D animation.
+</li></p>
+<p><li>
+<a href="https://img.atcoder.jp/ahc019/b36525d8.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.
+<ul></p>
+<p><li>
+<a href="https://img.atcoder.jp/ahc019/b36525d8_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.
+</li></p>
+</ul>
+</li>
+</ul>
+<p>
+<p><font color="red">You are allowed to share output images (PNG) of the provided visualizer for seed=0 on twitter during the contest.
+</font>
+You have to use the specified hashtag and public account. You can only share visualization results and scores for seed=0. Do not share videos, output itself, scores for other seeds or mention solutions or discussions.
+</p></p>
+<p><p>
+<a href="https://twitter.com/search?q=%23AHC019%20%23visualizer&src=typed_query&f=live">List of shared images</a>
+</p></p>
+</section>
+</div>
+</div>
+<hr />
+<div>
+<section>
+<h3 id="sample-input-1"><strong>Sample Input 1</strong><a class="headerlink" href="#sample-input-1" title="Permanent link">&para;</a></h3>
+<div>
+<p>5
+10001
+11011
+11111
+10101
+10001
+01110
+11011
+10000
+11011
+01110
+11110
+00011
+01110
+11000
+11111
+11110
+00011
+01110
+00011
+11110</p>
+</div>
+</section>
+</div>
+<div>
+<section>
+<h3 id="sample-output-1"><strong>Sample Output 1</strong><a class="headerlink" href="#sample-output-1" title="Permanent link">&para;</a></h3>
+<div>
+<p>19
+0 1 2 3 0 4 5 0 3 3 6 0 0 0 3 7 7 0 3 3 0 7 0 8 0 0 5 9 0 0 0 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7 0 0 0 0 0 9 10 0 0 0 0 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 9 0 0 0 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11 12 12 0 13 0 0 12 14 0 0 0 0 14 0 0 0 14 14 0 0 0 14 0
+15 0 0 0 3 14 0 0 0 3 0 0 0 0 9 16 0 0 9 9 0 0 0 17 0 0 0 0 0 0 14 0 10 0 3 14 0 10 0 9 0 0 0 18 0 0 0 0 0 0 0 0 0 0 3 0 0 12 0 3 14 0 12 0 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 0 0 12 0 0 14 0 7 0 0 0 7 7 0 5 0 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 0 7 0 0 5 0 0 0 0 0</p>
+</div>
+</section>
+</div>
+<p></span></p>
+<p></span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://yifen9.github.io" target="_blank" rel="noopener" title="yifen9.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M192 32c0 17.7 14.3 32 32 32 123.7 0 224 100.3 224 224 0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32m0 96c0 17.7 14.3 32 32 32 70.7 0 128 57.3 128 128 0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192-17.7 0-32 14.3-32 32m-96 16c0-26.5-21.5-48-48-48S0 117.5 0 144v224c0 79.5 64.5 144 144 144s144-64.5 144-144-64.5-144-144-144h-16v96h16c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<yifeng.li@studenti.unitn.it>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9V320c0 28.4-10.8 57.7-22.3 80.8-6.5 13-13.9 25.8-22.5 37.6-3.2 4.3-4.1 9.9-2.3 15s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7.3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7-3.2-14.2-7.5-28.7-13.5-42v-24.6c0-30.2 10.2-58.7 27.9-81.5 12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5.8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1l280.6-101c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1c-7.6-2.7-15.6-4.1-23.7-4.1M128 408c0 35.3 86 72 192 72s192-36.7 192-72l-15.3-145.4L354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6l-142.2-51.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<yifen9@yandex.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M153.1 315.8 65.7 512H2l96-209.8c-45.1-22.9-75.2-64.4-75.2-141.1C22.7 53.7 90.8 0 171.7 0H254v512h-55.1V315.8zm45.8-269.3h-29.4c-44.4 0-87.4 29.4-87.4 114.6 0 82.3 39.4 108.8 87.4 108.8h29.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/yifen9" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/yifen9" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.tabs.link", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+      
+        <script src="../../../../overrides/extra.js"></script>
+      
+    
+  </body>
+</html>

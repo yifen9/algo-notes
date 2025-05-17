@@ -1,0 +1,2914 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://yifen9.github.io/algo-notes/atcoder/4_ahc_AtCoder_Heuristic_Contest/010/a_A_Loop_Lines/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>AHC010 > Loop Lines - Algorithm Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../../overrides/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ahc010-loop-lines" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Algorithm Notes" class="md-header__button md-logo" aria-label="Algorithm Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Algorithm Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AHC010 &gt; Loop Lines
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yifen9/algo-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    algo-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../template/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Template
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AtCoder
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../aoj/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AOJ
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Algorithm Notes" class="md-nav__button md-logo" aria-label="Algorithm Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Algorithm Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yifen9/algo-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    algo-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Template
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Template
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../template/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../1_abc_AtCoder_Beginner_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Beginner Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Beginner Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../2_arc_AtCoder_Regular_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Regular Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Regular Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../3_agc_AtCoder_Grand_Contest/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Grand Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Grand Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AtCoder Heuristic Contest
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            AtCoder Heuristic Contest
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../aoj/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    AOJ
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            AOJ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../aoj/courses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Courses
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Courses
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../aoj/courses/2_ITP1_Introduction_to_Programming_I/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    2 Introduction to Programming I
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            2 Introduction to Programming I
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solutions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task Statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ストーリー
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      問題文
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      得点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      入力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      出力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      入力生成方法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ツール(入力ジェネレータ・ビジュアライザ)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      入力例 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      出力例 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#story" class="md-nav__link">
+    <span class="md-ellipsis">
+      Story
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem Statement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoring
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Generation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools-input-generator-and-visualizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools (Input generator and visualizer)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-input-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Input 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Output 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ahc010-loop-lines">AHC010 &gt; Loop Lines<a class="headerlink" href="#ahc010-loop-lines" title="Permanent link">&para;</a></h1>
+<p><small><a href="../">← Back</a></small></p>
+<h2 id="basic-info">Basic Info<a class="headerlink" href="#basic-info" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>ID:      </strong>a</li>
+<li><strong>Contest: </strong>010</li>
+<li><strong><a href="https://atcoder.jp/contests/ahc010/tasks/ahc010_a">Origin</a></strong></li>
+<li><strong><a href="https://download-directory.github.io/?url=https://github.com/yifen9/algo-notes/tree/main/src/atcoder/4_ahc_AtCoder_Heuristic_Contest/010/a_A_Loop_Lines" download>Download</a></strong></li>
+</ul>
+<h2 id="solutions">Solutions<a class="headerlink" href="#solutions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Type</th>
+<th>Size</th>
+<th>Result</th>
+<th>Strategy</th>
+<th>Performance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="task-statement">Task Statement<a class="headerlink" href="#task-statement" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">日本語</label><label for="__tabbed_1_2">English</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div>
+<p><span></p>
+<p><span></p>
+<div>
+<section>
+<h3 id="_1"><strong>ストーリー</strong><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><p>
+環状線が大好きな高橋くんは鉄道玩具で遊んでいる。
+この玩具は、下図のように並べられた正方形の線路タイルを回転させることで線路を繋ぎ、その上を電車の模型を走らせるというものである。
+高橋くんは電車の模型を2台持っているので、出来るだけ大きな環状線を2つ作ってほしい。
+</p></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><svg></p>
+<p><rect></p>
+<p></rect></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><defs></p>
+<p><g></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p><g></p>
+<p><path></p>
+<p></path></p>
+<p><path></p>
+<p></path></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p></defs></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p></svg></p>
+</td>
+<td>
+<p><svg></p>
+<p><rect></p>
+<p></rect></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><defs></p>
+<p><g></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p><g></p>
+<p><path></p>
+<p></path></p>
+<p><path></p>
+<p></path></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p></defs></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p></svg></p>
+</td>
+</tr>
+<tr>
+<p><td>
+初期状態</p>
+</td>
+<p><td>
+右上と右中央を回転</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+<div>
+<section>
+<h3 id="_2"><strong>問題文</strong><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><p>
+<span class="arithmatex">\(30\times 30\)</span>マスに並んだ線路タイルが与えられる。
+タイルは回転したものを区別すると8種類あり、以下のように番号付ける。
+</p></p>
+<p>
+<p><svg></p>
+<p><rect></p>
+<p></rect></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><text>
+0</p>
+<p></text></p>
+<p><text>
+1</p>
+<p></text></p>
+<p><text>
+2</p>
+<p></text></p>
+<p><text>
+3</p>
+<p></text></p>
+<p><text>
+4</p>
+<p></text></p>
+<p><text>
+5</p>
+<p></text></p>
+<p><text>
+6</p>
+<p></text></p>
+<p><text>
+7</p>
+<p></text></p>
+<p><defs></p>
+<p><g></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p><g></p>
+<p><path></p>
+<p></path></p>
+<p><path></p>
+<p></path></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p></defs></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p></svg></p>
+</p>
+<p><p>
+0から3番のタイルにはカーブした1本の線路、4番と5番のタイルにはカーブした2本の線路、6番と7番のタイルには直線の1本の線路が乗っている。
+各タイルは90度ずつ回転させることが出来、反時計回りに90度回転させると次のようになる。
+</p></p>
+<p>
+<p><svg></p>
+<p><rect></p>
+<p></rect></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><text>
+1</p>
+<p></text></p>
+<p><text>
+2</p>
+<p></text></p>
+<p><text>
+3</p>
+<p></text></p>
+<p><text>
+0</p>
+<p></text></p>
+<p><text>
+5</p>
+<p></text></p>
+<p><text>
+4</p>
+<p></text></p>
+<p><text>
+7</p>
+<p></text></p>
+<p><text>
+6</p>
+<p></text></p>
+<p><defs></p>
+<p><g></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p><g></p>
+<p><path></p>
+<p></path></p>
+<p><path></p>
+<p></path></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p></defs></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p></svg></p>
+</p>
+<p><p>
+線路に枝分かれはないため、各線路はパスもしくは閉路をなす。
+閉路をなす線路の集合を「環状線」と呼び、その長さを、線路に沿って一周する際にタイルから隣接タイルへ移動する回数と定義する。
+例えば、以下の環状線は7タイルからなるが、真ん中のタイルを二回通るため、長さは8である。
+</p></p>
+<p>
+<p><svg></p>
+<p><rect></p>
+<p></rect></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><defs></p>
+<p><g></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p><g></p>
+<p><path></p>
+<p></path></p>
+<p><path></p>
+<p></path></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p></defs></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p></svg></p>
+</p>
+<p><p>
+各タイルを回転させる回数を決定せよ。
+</p></p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="_3"><strong>得点</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><p>
+出力に従ってタイルを回転させることで得られた環状線のうち、一番長いものの長さを<span class="arithmatex">\(L_1\)</span>、二番目に長いものの長さを<span class="arithmatex">\(L_2\)</span>とする(最長のものが複数ある場合は<span class="arithmatex">\(L_1=L_2\)</span>)。
+このとき、<span class="arithmatex">\(L_1\times L_2\)</span>の得点が得られる。
+環状線の個数が <span class="arithmatex">\(1\)</span>以下の場合、そのテストケースの得点は <span class="arithmatex">\(0\)</span>点となる。
+</p></p>
+<p><p>
+テストケースは全部で 100 個あり、各テストケースの得点の合計が提出の得点となる。
+1つ以上のテストケースで 
+<span>
+AC
+</span>
+以外の判定がされた場合、提出の得点は0点となる。
+コンテスト時間中に得た最高得点で最終順位が決定され、コンテスト終了後のシステムテストは行われない。
+同じ得点を複数の参加者が得た場合、その得点を獲得した提出の早い方が上位となる。
+</p></p>
+<p><p>
+環状線の長さの求め方のヒント</p>
+</p>
+<details>
+<p><font color="red">疑似コードを更新しました。
+</font>
+環状線の長さは例えば以下のようにして計算できる。
+タイルの状態が入った二次元配列を <code>tiles</code>とする。
+方向を左上右下の順に0,1,2,3と番号付けると、座標の変化は配列 <code>di = [0, -1, 0, 1]</code>と <code>dj = [-1, 0, 1, 0]</code>で表される。
+状態 <code>t</code>番のタイルに <code>d</code>の方向から侵入した際に次に向かうタイルの方向を <code>to[t][d]</code>、ただしそのような方向から侵入不可能な場合は<code>-1</code>とすると、以下のような二次元配列となる。
+<p></p>
+</p>
+<div>
+<p>to = [
+    [1, 0, -1, -1],
+    [3, -1, -1, 0],
+    [-1, -1, 3, 2],
+    [-1, 2, 1, -1],
+    [1, 0, 3, 2],
+    [3, 2, 1, 0],
+    [2, -1, 0, -1],
+    [-1, 3, -1, 1],
+];</p>
+</div>
+<p><p>
+位置 <code>(i, j)</code>のタイルに <code>d</code>の方向のタイルから侵入したとき、これらの組を以下のように更新出来る。
+</p></p>
+<div>
+<p>d2 = to[tiles[i][j]][d]; // 次のタイルの方向
+if (d2 == -1) return 0; // 線路が途切れている
+i += di[d2];
+j += dj[d2];
+if (i &lt; 0 || i &gt;= 30 || j &lt; 0 || j &gt;= 30) return 0; // 線路が途切れている
+d = (d2 + 2) % 4; // 今居たタイルの方向</p>
+</div>
+<p><p>
+あとはこの処理を最初の位置と向き(同じタイルを二度通る可能性があることに注意)に戻ってくるまで繰り返せば、繰り返し回数が環状線の長さとなる。
+</p></p>
+<div>
+<p>// (si, sj) のタイルに sd 方向のタイルから侵入した状態からスタートして環状線の長さを求める
+i = si;
+j = sj;
+d = sd;
+loop {
+    d2 = to[tiles[i][j]][d];
+    if (d2 == -1) return 0;
+    i += di[d2];
+    j += dj[d2];
+    if (i &lt; 0 || i &gt;= 30 || j &lt; 0 || j &gt;= 30) return 0;
+    d = (d2 + 2) % 4;
+    length += 1;
+    if (i == si &amp;&amp; j == sj &amp;&amp; d == sd) return length;
+}</p>
+</div>
+</details>
+</section>
+</div>
+<hr />
+<div>
+<div>
+<section>
+<h3 id="_4"><strong>入力</strong><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><p>
+入力は以下の形式で標準入力から与えられる。
+</p></p>
+<div>
+<p><span class="arithmatex">\(t_{0,0}\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(t_{0,29}\)</span><span class="arithmatex">\(\vdots\)</span><span class="arithmatex">\(t_{29,0}\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(t_{29,29}\)</span>
+</div></p>
+<p><p>
+各 <span class="arithmatex">\(t_{i,0}\cdots t_{i,29}\)</span>は長さ <span class="arithmatex">\(30\)</span>の文字列である。
+上から <span class="arithmatex">\(i\)</span><span class="arithmatex">\((0\leq i\leq 29)\)</span>番目、左から <span class="arithmatex">\(j\)</span><span class="arithmatex">\((0\leq j\leq 29)\)</span>番目のタイルを <span class="arithmatex">\((i, j)\)</span>と表す。
+<span class="arithmatex">\(t_{i,j}\)</span>はタイル <span class="arithmatex">\((i,j)\)</span>の状態を表す <span class="arithmatex">\(0\)</span>以上 <span class="arithmatex">\(7\)</span>以下の数字である。
+</p></p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="_5"><strong>出力</strong><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><p>
+タイル <span class="arithmatex">\((i,j)\)</span>を反時計回りに90度回転させる回数を <span class="arithmatex">\(r_{i,j}\)</span>(<span class="arithmatex">\(0\leq r_{i,j}\leq 3\)</span>) としたとき、<span class="arithmatex">\(30i+j\)</span>文字目が <span class="arithmatex">\(r_{i,j}\)</span>となるような長さ <span class="arithmatex">\(900\)</span>の文字列を1行に出力せよ。
+</p></p>
+<p><p>
+解を複数回出力しても良い。複数出力された場合は一番最後のもののみが採点に用いられる。ビジュアライザでは複数出力された解の比較が可能である。
+</p></p>
+<p><p>
+<a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.html?lang=ja&show=example">例を見る</a>
+</p></p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="_6"><strong>入力生成方法</strong><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><p>
+<span class="arithmatex">\(L\)</span>以上 <span class="arithmatex">\(U\)</span>以下の整数値を一様ランダムに生成する関数を <span class="arithmatex">\(\mathrm{rand}(L,U)\)</span>で表す。
+</p></p>
+<p><p>
+各 <span class="arithmatex">\(t_{i,j}\)</span>はそれぞれ独立に以下のように生成される。
+</p></p>
+<ul>
+<p><li>
+25% の確率で <span class="arithmatex">\(t_{i,j}=\mathrm{rand}(0, 3)\)</span>と生成する。
+</li></p>
+<p><li>
+50% の確率で <span class="arithmatex">\(t_{i,j}=\mathrm{rand}(4, 5)\)</span>と生成する。
+</li></p>
+<p><li>
+25% の確率で <span class="arithmatex">\(t_{i,j}=\mathrm{rand}(6, 7)\)</span>と生成する。
+</li></p>
+</ul>
+</section>
+</div>
+<div>
+<section>
+<h3 id="_7"><strong>ツール(入力ジェネレータ・ビジュアライザ)</strong><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<p><li>
+<a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.html?lang=ja">Web版</a>: ローカル版より高性能でアニメーション表示が可能です。
+</li></p>
+<p><li>
+<a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.zip">ローカル版</a>: 使用するには<a href="https://www.rust-lang.org/ja">Rust言語</a>のコンパイル環境をご用意下さい。
+<ul></p>
+<p><li>
+<a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8_windows.zip">Windows用のコンパイル済みバイナリ</a>: Rust言語の環境構築が面倒な方は代わりにこちらをご利用下さい。
+</li></p>
+</ul>
+</li>
+</ul>
+<p>
+<p><font color="red">
+<strong>
+コンテスト終了までビジュアライズ結果の共有は禁止されています。ご注意下さい。
+</strong>
+</font></p>
+</p>
+</section>
+</div>
+</div>
+<hr />
+<div>
+<section>
+<h3 id="1"><strong>入力例 1</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div>
+<p>436204751575440756541724746755
+347475575404531645424640344414
+556644445442451553264555436757
+761235545455474254546631467555
+356447405421445153457656535564
+014274425356522445253477726464
+311765446655556346633757446600
+471744514426443445162555525455
+616053450444473274742055767455
+254124557527462423444450075637
+046546764557475436717475255501
+752005462554554414031525515356
+452524742177476245065554577605
+664465643742341605007655253777
+444571276444165545442447340356
+435050335454565235025507452540
+467560030465475447567644441426
+735730577745561712541450443547
+472675153755474445700540444544
+507472724556677621365747544757
+535177720776402476665547676174
+636275455643650141456764547131
+164624553536572554544165746536
+521574724335644274433544442556
+576732703453654464555315065544
+656244747015464523316444145414
+555646775254464367454454067475
+665624154657072514445150474444
+570004746554540445465051654541
+635504417414262014475547424275</p>
+</div>
+</section>
+</div>
+<div>
+<section>
+<h3 id="1_1"><strong>出力例 1</strong><a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<div>
+<p>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</p>
+</div>
+</section>
+</div>
+<p></span></p>
+<p></span></p>
+</div>
+</div>
+<div class="tabbed-block">
+<div>
+<p><span></p>
+<p><span></p>
+<div>
+<section>
+<h3 id="story"><strong>Story</strong><a class="headerlink" href="#story" title="Permanent link">&para;</a></h3>
+<p><p>
+Takahashi, who loves loop lines, is playing with a toy train.
+As shown in the figure below, this toy consists of square tiles containing railroad lines.
+By rotating the tiles, he can connect lines and play with toy trains running on the lines.
+Because Takahashi has two toy trains, please create two large loop lines as much as possible.
+</p></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><svg></p>
+<p><rect></p>
+<p></rect></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><defs></p>
+<p><g></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p><g></p>
+<p><path></p>
+<p></path></p>
+<p><path></p>
+<p></path></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p></defs></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p></svg></p>
+</td>
+<td>
+<p><svg></p>
+<p><rect></p>
+<p></rect></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><defs></p>
+<p><g></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p><g></p>
+<p><path></p>
+<p></path></p>
+<p><path></p>
+<p></path></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p></defs></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p></svg></p>
+</td>
+</tr>
+<tr>
+<p><td>
+Initial State.</p>
+</td>
+<p><td>
+After rotating the top-right tile and the middle-right tile.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+<div>
+<section>
+<h3 id="problem-statement"><strong>Problem Statement</strong><a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h3>
+<p><p>
+You are given tiles containing railroad lines arranged in a 30 x 30 square.
+There are 8 types of tiles by distinguishing rotations which are numbered as follows.
+</p></p>
+<p>
+<p><svg></p>
+<p><rect></p>
+<p></rect></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><text>
+0</p>
+<p></text></p>
+<p><text>
+1</p>
+<p></text></p>
+<p><text>
+2</p>
+<p></text></p>
+<p><text>
+3</p>
+<p></text></p>
+<p><text>
+4</p>
+<p></text></p>
+<p><text>
+5</p>
+<p></text></p>
+<p><text>
+6</p>
+<p></text></p>
+<p><text>
+7</p>
+<p></text></p>
+<p><defs></p>
+<p><g></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p><g></p>
+<p><path></p>
+<p></path></p>
+<p><path></p>
+<p></path></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p></defs></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p></svg></p>
+</p>
+<p><p>
+Tiles 0 to 3 contain one curved line, tiles 4 and 5 contain two curved lines, and tiles 6 and 7 contain one straight line.
+Each tile can be rotated every 90 degrees.
+By rotating a tile 90 degrees counterclockwise, the tile will become as follows.
+</p></p>
+<p>
+<p><svg></p>
+<p><rect></p>
+<p></rect></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><text>
+1</p>
+<p></text></p>
+<p><text>
+2</p>
+<p></text></p>
+<p><text>
+3</p>
+<p></text></p>
+<p><text>
+0</p>
+<p></text></p>
+<p><text>
+5</p>
+<p></text></p>
+<p><text>
+4</p>
+<p></text></p>
+<p><text>
+7</p>
+<p></text></p>
+<p><text>
+6</p>
+<p></text></p>
+<p><defs></p>
+<p><g></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p><g></p>
+<p><path></p>
+<p></path></p>
+<p><path></p>
+<p></path></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p></defs></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p></svg></p>
+</p>
+<p><p>
+Since there are no branches on the lines, each line is part of a path or cycle.
+A set of lines forming a cycle is called a "loop line," and its length is defined as the number of times to move from a tile to its adjacent tile in a round trip along the loop line.
+For example, the loop line below consists of 7 tiles, but its length is 8 because it passes through the center tile twice.
+</p></p>
+<p>
+<p><svg></p>
+<p><rect></p>
+<p></rect></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><defs></p>
+<p><g></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p><g></p>
+<p><path></p>
+<p></path></p>
+<p><path></p>
+<p></path></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p><line></p>
+<p></line></p>
+<p></g></p>
+<p></defs></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><g></p>
+<p><use></p>
+<p></use></p>
+<p></g></p>
+<p><use></p>
+<p></use></p>
+<p><use></p>
+<p></use></p>
+<p></svg></p>
+</p>
+<p><p>
+Your task is to determine the number of times to rotate each tile.
+</p></p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="scoring"><strong>Scoring</strong><a class="headerlink" href="#scoring" title="Permanent link">&para;</a></h3>
+<p><p>
+Let <span class="arithmatex">\(L_1\)</span>be the length of the longest loop line obtained by rotating the tiles according to the output, and <span class="arithmatex">\(L_2\)</span>be the length of the second longest one (<span class="arithmatex">\(L_1=L_2\)</span>if there is more than one longest one).
+Then, you will get a score of <span class="arithmatex">\(L_1\times L_2\)</span>.
+If the number of loop lines is less than or equal to <span class="arithmatex">\(1\)</span>, the score for that test case is <span class="arithmatex">\(0\)</span>.
+</p></p>
+<p><p>
+There are 100 test cases, and the score of a submission is the total score for each test case. If you get a result other than 
+<span>
+AC
+</span>
+for one or more test cases, the score of the submission will be zero. The highest score obtained during the contest time will determine the final ranking, and there will be no system test after the contest. If more than one participant gets the same score, the ranking will be determined by the submission time of the submission that received that score.
+</p></p>
+<p><p>
+Hints on how to compute the length of a loop line.</p>
+</p>
+<details>
+<p><font color="red">Pseudo code has been updated.
+</font>
+You can compute the length of a loop line, for example, as follows.
+Let <code>tiles</code>be a two-dimensional array containing the tile states.
+By numbering the directions 0, 1, 2, 3 in order of left, up, right, and down, the change in coordinates is represented by the arrays <code>di = [0, -1, 0, 1]</code>and <code>dj = [-1, 0, 1, 0]</code>.
+When a train enters a tile of state <code>t</code>from its adjacent tile in direction <code>d</code>, let <code>to[t][d]</code>be the direction to the next tile, or <code>-1</code>if the train cannot enter from such a direction, then we obtain the following two-dimensional array.
+<p></p>
+</p>
+<div>
+<p>to = [
+    [1, 0, -1, -1],
+    [3, -1, -1, 0],
+    [-1, -1, 3, 2],
+    [-1, 2, 1, -1],
+    [1, 0, 3, 2],
+    [3, 2, 1, 0],
+    [2, -1, 0, -1],
+    [-1, 3, -1, 1],
+];</p>
+</div>
+<p><p>
+When a train enters tile at position <code>(i, j)</code>from its adjacent tile in direction <code>d</code>, you can update these variables as follows.
+</p></p>
+<div>
+<p>d2 = to[tiles[i][j]][d]; // Direction to the next tile
+if (d2 == -1) return 0; // The line is broken.
+i += di[d2];
+j += dj[d2];
+if (i &lt; 0 || i &gt;= 30 || j &lt; 0 || j &gt;= 30) return 0; // The line is broken.
+d = (d2 + 2) % 4; // Direction to the previous tile.</p>
+</div>
+<p><p>
+After repeating this process until the train returns to its initial position and direction (note that it may pass through the same tile twice), the number of iterations is the length of the loop line.
+</p></p>
+<div>
+<p>// Suppose that a train enters a tile (si, sj) from direction sd.
+i = si;
+j = sj;
+d = sd;
+length = 0;
+loop {
+    d2 = to[tiles[i][j]][d];
+    if (d2 == -1) return 0;
+    i += di[d2];
+    j += dj[d2];
+    if (i &lt; 0 || i &gt;= 30 || j &lt; 0 || j &gt;= 30) return 0;
+    d = (d2 + 2) % 4;
+    length += 1;
+    if (i == si &amp;&amp; j == sj &amp;&amp; d == sd) return length;
+}</p>
+</div>
+</details>
+</section>
+</div>
+<hr />
+<div>
+<div>
+<section>
+<h3 id="input"><strong>Input</strong><a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
+<p><p>
+Input is given from Standard Input in the following format:
+</p></p>
+<div>
+<p><span class="arithmatex">\(t_{0,0}\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(t_{0,29}\)</span><span class="arithmatex">\(\vdots\)</span><span class="arithmatex">\(t_{29,0}\)</span><span class="arithmatex">\(\cdots\)</span><span class="arithmatex">\(t_{29,29}\)</span>
+</div></p>
+<p><p>
+Each <span class="arithmatex">\(t_{i,0}\cdots t_{i,29}\)</span>is a string of <span class="arithmatex">\(30\)</span>characters.
+Let <span class="arithmatex">\((i,j)\)</span>denote the <span class="arithmatex">\(i\)</span>-th <span class="arithmatex">\((0\leq i\leq 29)\)</span>tile from the top and <span class="arithmatex">\(j\)</span>-th <span class="arithmatex">\((0\leq j\leq 29)\)</span>tile from the left.
+Then, <span class="arithmatex">\(t_{i,j}\)</span>is an integer between <span class="arithmatex">\(0\)</span>and <span class="arithmatex">\(7\)</span>representing the state of the tile <span class="arithmatex">\((i, j)\)</span>.
+</p></p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="output"><strong>Output</strong><a class="headerlink" href="#output" title="Permanent link">&para;</a></h3>
+<p><p>
+Let <span class="arithmatex">\(r_{i,j}\)</span>(<span class="arithmatex">\(0\leq r_{i,j}\leq 3\)</span>) be the number of times the tile <span class="arithmatex">\((i,j)\)</span>is rotated 90 degrees counterclockwise.
+Output a string of length <span class="arithmatex">\(900\)</span>such that the <span class="arithmatex">\(30i+j\)</span>-th character is <span class="arithmatex">\(r_{i,j}\)</span>in one line to Standard Output.
+</p></p>
+<p><p>
+<a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.html?lang=en&show=example">Show example</a>
+</p></p>
+</section>
+</div>
+<div>
+<section>
+<h3 id="input-generation"><strong>Input Generation</strong><a class="headerlink" href="#input-generation" title="Permanent link">&para;</a></h3>
+<p><p>
+Let <span class="arithmatex">\(\mathrm{rand}(L,U)\)</span>be a function that generates a uniform random integer between <span class="arithmatex">\(L\)</span>and <span class="arithmatex">\(U\)</span>, inclusive.
+</p></p>
+<p><p>
+Each <span class="arithmatex">\(t_{i,j}\)</span>is independently generated as follows.
+</p></p>
+<ul>
+<p><li>
+With probability 25%, <span class="arithmatex">\(t_{i,j}=\mathrm{rand}(0, 3)\)</span>.
+</li></p>
+<p><li>
+With probability 50%, <span class="arithmatex">\(t_{i,j}=\mathrm{rand}(4, 5)\)</span>.
+</li></p>
+<p><li>
+With probability 25%, <span class="arithmatex">\(t_{i,j}=\mathrm{rand}(6, 7)\)</span>.
+</li></p>
+</ul>
+</section>
+</div>
+<div>
+<section>
+<h3 id="tools-input-generator-and-visualizer"><strong>Tools (Input generator and visualizer)</strong><a class="headerlink" href="#tools-input-generator-and-visualizer" title="Permanent link">&para;</a></h3>
+<ul>
+<p><li>
+<a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.html?lang=en">Web version</a>: This is more powerful than the local version and can display animations.
+</li></p>
+<p><li>
+<a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8.zip">Local version</a>: You need a compilation environment of <a href="https://www.rust-lang.org/">Rust language</a>.
+<ul></p>
+<p><li>
+<a href="https://img.atcoder.jp/ahc010/d3a6c91ee76cb8_windows.zip">Pre-compiled binary for Windows</a>: If you are not familiar with the Rust language environment, please use this instead.
+</li></p>
+</ul>
+</li>
+</ul>
+<p>
+<p><font color="red">
+<strong>
+Sharing visualization results is not allowed until the end of the contest. 
+</strong>
+</font></p>
+</p>
+</section>
+</div>
+</div>
+<hr />
+<div>
+<section>
+<h3 id="sample-input-1"><strong>Sample Input 1</strong><a class="headerlink" href="#sample-input-1" title="Permanent link">&para;</a></h3>
+<div>
+<p>436204751575440756541724746755
+347475575404531645424640344414
+556644445442451553264555436757
+761235545455474254546631467555
+356447405421445153457656535564
+014274425356522445253477726464
+311765446655556346633757446600
+471744514426443445162555525455
+616053450444473274742055767455
+254124557527462423444450075637
+046546764557475436717475255501
+752005462554554414031525515356
+452524742177476245065554577605
+664465643742341605007655253777
+444571276444165545442447340356
+435050335454565235025507452540
+467560030465475447567644441426
+735730577745561712541450443547
+472675153755474445700540444544
+507472724556677621365747544757
+535177720776402476665547676174
+636275455643650141456764547131
+164624553536572554544165746536
+521574724335644274433544442556
+576732703453654464555315065544
+656244747015464523316444145414
+555646775254464367454454067475
+665624154657072514445150474444
+570004746554540445465051654541
+635504417414262014475547424275</p>
+</div>
+</section>
+</div>
+<div>
+<section>
+<h3 id="sample-output-1"><strong>Sample Output 1</strong><a class="headerlink" href="#sample-output-1" title="Permanent link">&para;</a></h3>
+<div>
+<p>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</p>
+</div>
+</section>
+</div>
+<p></span></p>
+<p></span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://yifen9.github.io" target="_blank" rel="noopener" title="yifen9.github.io" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M192 32c0 17.7 14.3 32 32 32 123.7 0 224 100.3 224 224 0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32m0 96c0 17.7 14.3 32 32 32 70.7 0 128 57.3 128 128 0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192-17.7 0-32 14.3-32 32m-96 16c0-26.5-21.5-48-48-48S0 117.5 0 144v224c0 79.5 64.5 144 144 144s144-64.5 144-144-64.5-144-144-144h-16v96h16c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<yifeng.li@studenti.unitn.it>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9V320c0 28.4-10.8 57.7-22.3 80.8-6.5 13-13.9 25.8-22.5 37.6-3.2 4.3-4.1 9.9-2.3 15s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7.3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7-3.2-14.2-7.5-28.7-13.5-42v-24.6c0-30.2 10.2-58.7 27.9-81.5 12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5.8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1l280.6-101c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1c-7.6-2.7-15.6-4.1-23.7-4.1M128 408c0 35.3 86 72 192 72s192-36.7 192-72l-15.3-145.4L354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6l-142.2-51.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<yifen9@yandex.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M153.1 315.8 65.7 512H2l96-209.8c-45.1-22.9-75.2-64.4-75.2-141.1C22.7 53.7 90.8 0 171.7 0H254v512h-55.1V315.8zm45.8-269.3h-29.4c-44.4 0-87.4 29.4-87.4 114.6 0 82.3 39.4 108.8 87.4 108.8h29.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/yifen9" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://t.me/yifen9" target="_blank" rel="noopener" title="t.me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.tabs.link", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script>
+      
+        <script src="../../../../overrides/extra.js"></script>
+      
+    
+  </body>
+</html>
